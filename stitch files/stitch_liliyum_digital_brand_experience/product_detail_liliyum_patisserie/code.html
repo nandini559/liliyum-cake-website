@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Liliyum Patisserie - Signature Raspberry Eclair</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#4e3d00",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-secondary": "#ffffff",
+                        "background": "#fff8f5",
+                        "tertiary": "#735c00",
+                        "surface-dim": "#e0d8d6",
+                        "inverse-on-surface": "#f7efec",
+                        "secondary-fixed": "#ffd9de",
+                        "on-primary-fixed-variant": "#5f3e3c",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "primary": "#321716",
+                        "primary-fixed-dim": "#eabcb8",
+                        "outline": "#827472",
+                        "tertiary-container": "#cba72f",
+                        "on-error": "#ffffff",
+                        "primary-container": "#4a2c2a",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#241a00",
+                        "secondary": "#b80049",
+                        "surface-tint": "#795553",
+                        "secondary-container": "#e2165f",
+                        "on-primary-fixed": "#2e1413",
+                        "inverse-primary": "#eabcb8",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#faf2ef",
+                        "on-secondary-fixed-variant": "#900038",
+                        "outline-variant": "#d4c3c1",
+                        "on-secondary-fixed": "#400014",
+                        "inverse-surface": "#33302e",
+                        "surface-variant": "#e8e1de",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1e1b19",
+                        "on-secondary-container": "#fffbff",
+                        "surface": "#fff8f5",
+                        "surface-container-highest": "#e8e1de",
+                        "primary-fixed": "#ffdad7",
+                        "on-surface-variant": "#504443",
+                        "surface-bright": "#fff8f5",
+                        "tertiary-fixed": "#ffe088",
+                        "surface-container-high": "#eee7e4",
+                        "secondary-fixed-dim": "#ffb2be",
+                        "on-surface": "#1e1b19",
+                        "on-primary-container": "#bd928f",
+                        "surface-container": "#f4ece9",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Playfair Display"],
+                        "label-md": ["Manrope"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Manrope"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-xl": ["Playfair Display"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "display-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        .organic-blob {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            animation: morph 8s ease-in-out infinite;
+        }
+        @keyframes morph {
+            0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+            34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+            67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased font-body-md overflow-x-hidden selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed z-50 bg-background/80 backdrop-blur-md dark:bg-background/80 shadow-sm docked full-width top-0 w-full transition-all duration-300" id="topNav">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Brand -->
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary hover:opacity-80 transition-opacity" href="#">
+                Liliyum Patisserie
+            </a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-secondary border-b-2 border-secondary pb-1 font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Cakes</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Chocolates</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Hampers</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Cafe</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Our Story</a>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="text-primary hover:opacity-80 transition-opacity p-2">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="hidden md:flex bg-secondary hover:bg-secondary-container text-on-secondary font-label-md text-label-md px-6 py-3 rounded-lg shadow-sm transition-all duration-150 hover:shadow-md items-center gap-2">
+                    Order Now
+                </button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-[100px] pb-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Bento Grid Product Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter min-h-[716px]">
+<!-- Left: Immersive Gallery & Features -->
+<div class="lg:col-span-7 flex flex-col gap-gutter">
+<!-- Main Image Area -->
+<div class="relative w-full h-[500px] md:h-[600px] bg-surface-container-high rounded-xl overflow-hidden group">
+<!-- Decorative Blob Background -->
+<div class="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none overflow-hidden">
+<div class="w-[120%] h-[120%] bg-secondary-fixed/50 organic-blob mix-blend-multiply blur-2xl"></div>
+</div>
+<img alt="Signature Raspberry Eclair" class="w-full h-full object-cover rounded-xl relative z-10 transition-transform duration-700 group-hover:scale-105" data-alt="A highly detailed close-up of a premium artisanal raspberry eclair on a minimalist ceramic plate. The eclair features a perfectly golden choux pastry, generously filled with soft pink raspberry cream. It is topped with a glossy, vibrant pink glaze, fresh whole raspberries, and delicate edible gold leaf accents. The lighting is soft, warm, and natural, creating an inviting, luxurious light-mode aesthetic against a creamy background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6CzmM5FRhKRqE6QEuIcKIM_O7g3djdKjIVBCOxzSSRJL03nKKj8_WzkmvT-5EYCCZNr0oL_P8O-RY0heEzdPliBmPuOR-iBynIJhb2mEBnB0O3Be1rlDycaAFQMP8Cw-N0V9TlkCuwVWcOVNSBVd3QipsLCTAnnjBT_kRgbhhojwtSIkO-Z8Kx2iKb_rtGahDvI0mGWJt__QO35bAUnHQutrftiaC6_h9Z2jwoDz20jaIaOAwsmpWow"/>
+<!-- Badges -->
+<div class="absolute top-4 left-4 z-20 flex flex-col gap-2">
+<span class="bg-secondary-container/90 backdrop-blur-sm text-on-secondary font-label-md text-label-md px-3 py-1 rounded-full shadow-sm">Bestseller</span>
+<span class="bg-surface/90 backdrop-blur-sm text-on-surface font-label-md text-label-md px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="star">star</span> 4.9
+                            </span>
+</div>
+</div>
+<!-- Thumbnail Gallery -->
+<div class="grid grid-cols-4 gap-4">
+<button class="h-24 md:h-32 rounded-lg overflow-hidden border-2 border-secondary relative">
+<img alt="Thumbnail 1" class="w-full h-full object-cover" data-alt="Top-down view of the raspberry eclair showcasing the glossy pink glaze and fresh raspberries." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDtSnXaXul8Wf746rCHmGAyjnUQXNDI4RoLZ3kPCXli24nPQ-TbyK3k6ZnYCccTh4NV3uuxjp59TRL5l4wYfhX3LTb8xO78FOHicBZ6PKqW-bo3FgxdSIhhzCEcjuTlAWwbrSjwne_XnRLkm9WqsXGM3FtwkZePYRLE6c44GirBCx-BHdEeloFT0BV5J6dIEvskujTn9xmWPqZ8tzNM8qdcN--QECwXca7gtsunBmcRDk67rpYG4_u8A"/>
+</button>
+<button class="h-24 md:h-32 rounded-lg overflow-hidden border border-outline-variant hover:border-primary transition-colors opacity-70 hover:opacity-100">
+<img alt="Thumbnail 2" class="w-full h-full object-cover" data-alt="A cross-section view of the eclair showing the light choux pastry and the generous fluffy pink raspberry cream filling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBynagwxGZMHQPfV3dMmoWo5GeAv9UWDWXIbVPVnaNO3K4L0Uo1CUItac6NIMnOvPsJUu7_mD1w_vXOdqboxQCCGAxxGGDObP05tmx3iWaX-OT5S0NzXHonnmrZywtlYZlhQZbB9mkiNtDnl5B9dWP7qevCXddz-Lc7iRtJdhiTnVMySo6MrdM72kBGPj4FDIqjKQJTQEbl_EJuwigZP_cq4y3bj85L2qLrKs1twmICIcuVtQV0R1e6Rw"/>
+</button>
+<button class="h-24 md:h-32 rounded-lg overflow-hidden border border-outline-variant hover:border-primary transition-colors opacity-70 hover:opacity-100">
+<img alt="Thumbnail 3" class="w-full h-full object-cover" data-alt="Lifestyle shot of the eclair being served next to a delicate cup of tea in a bright, modern cafe setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg5KA8i27ycWLb5CIg_3JdBq7Cx2sGoiQ-BBhZBFy-hgAJ2gnYUAG9ax2ORxXv5sMZ46srr5pSwodxrt96cXRWUAAVA5WugyPmz7qbJK9ghN5ZZlEoJA3nQw5Eb7K9BYWRCbuz3tT3sSDrBhxDHPsrzaH0llGEkTzZGcbDC9TsRsAVkWGOLLldtoqb1fgTLRbgZrchp0LxF8sF2zyijvKhrWRw2eAOJY18_r8auq-HJKoWh6c4HP8_gw"/>
+</button>
+<button class="h-24 md:h-32 rounded-lg overflow-hidden border border-outline-variant hover:border-primary transition-colors opacity-70 hover:opacity-100 bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="play_circle">play_circle</span>
+</button>
+</div>
+<!-- Highlight Features -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 bg-surface-container-low p-6 rounded-xl border border-outline-variant/30">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined icon-fill" data-icon="eco">eco</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary-container">100% Natural</h4>
+<p class="text-sm text-on-surface-variant mt-1">No artificial colors or preservatives.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined icon-fill" data-icon="oven_gen">bakery_dining</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary-container">Freshly Baked</h4>
+<p class="text-sm text-on-surface-variant mt-1">Crafted daily in our artisanal kitchen.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary-container">Careful Delivery</h4>
+<p class="text-sm text-on-surface-variant mt-1">Temperature-controlled packaging.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Configuration & Cart -->
+<div class="lg:col-span-5 flex flex-col gap-6 sticky top-32 h-fit">
+<!-- Header -->
+<div>
+<div class="flex justify-between items-start">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Signature Raspberry Eclair</h1>
+<button class="text-on-surface-variant hover:text-secondary transition-colors p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="favorite_border">favorite_border</span>
+</button>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4 leading-relaxed">
+                            A little slice of summer joy. Our perfectly crisp choux pastry is piped full of a light, tart raspberry mascarpone cream, finished with a mirror glaze and fresh berries. Treat yourself to a moment of lil' yum.
+                        </p>
+<div class="flex items-baseline gap-4 mb-6">
+<span class="text-3xl font-bold text-primary">$18.00</span>
+<span class="text-sm text-on-surface-variant line-through">$22.00</span>
+</div>
+</div>
+<hr class="border-outline-variant/30"/>
+<!-- Customization -->
+<div class="flex flex-col gap-6">
+<!-- Variant Selection -->
+<div>
+<h3 class="font-label-md text-label-md text-primary-container mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="palette">palette</span> Select Flavor
+                            </h3>
+<div class="grid grid-cols-2 gap-3">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="flavor" type="radio"/>
+<div class="p-3 rounded-lg border-2 border-secondary bg-secondary-fixed/20 flex items-center gap-3 transition-all peer-checked:border-secondary peer-checked:bg-secondary-fixed/30 hover:border-secondary/50">
+<div class="w-8 h-8 rounded-full bg-secondary"></div>
+<span class="font-label-md text-label-md text-primary">Raspberry Dream</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="flavor" type="radio"/>
+<div class="p-3 rounded-lg border border-outline-variant bg-surface flex items-center gap-3 transition-all peer-checked:border-secondary peer-checked:bg-secondary-fixed/30 hover:border-secondary/50">
+<div class="w-8 h-8 rounded-full bg-tertiary"></div>
+<span class="font-label-md text-label-md text-primary">Pistachio Crunch</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Size/Quantity -->
+<div>
+<h3 class="font-label-md text-label-md text-primary-container mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="scale">scale</span> Box Size
+                            </h3>
+<div class="flex flex-wrap gap-3">
+<label class="cursor-pointer">
+<input class="peer sr-only" name="size" type="radio"/>
+<div class="px-5 py-2 rounded-lg border border-outline-variant text-on-surface-variant font-label-md text-label-md transition-all peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary-container hover:bg-surface-container">
+                                        Single
+                                    </div>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="size" type="radio"/>
+<div class="px-5 py-2 rounded-lg border border-outline-variant text-on-surface-variant font-label-md text-label-md transition-all peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary-container hover:bg-surface-container relative">
+                                        Box of 4
+                                        <span class="absolute -top-2 -right-2 bg-tertiary text-on-tertiary text-[10px] px-2 py-0.5 rounded-full font-bold">Popular</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="size" type="radio"/>
+<div class="px-5 py-2 rounded-lg border border-outline-variant text-on-surface-variant font-label-md text-label-md transition-all peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary-container hover:bg-surface-container">
+                                        Box of 6
+                                    </div>
+</label>
+</div>
+</div>
+<!-- Delivery Picker (Simplified Glassmorphism card) -->
+<div class="bg-surface-container-low/50 backdrop-blur-md p-4 rounded-xl border border-outline-variant/50 relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 w-32 h-32 bg-primary-fixed/30 rounded-full blur-2xl"></div>
+<h3 class="font-label-md text-label-md text-primary-container mb-3 flex items-center gap-2 relative z-10">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_month">calendar_month</span> Delivery Details
+                            </h3>
+<div class="grid grid-cols-2 gap-3 relative z-10">
+<div class="relative">
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-2 text-on-surface focus:border-tertiary focus:ring-1 focus:ring-tertiary font-body-md text-body-md" placeholder="Select Date" type="date"/>
+</div>
+<div class="relative">
+<select class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-2 text-on-surface focus:border-tertiary focus:ring-1 focus:ring-tertiary font-body-md text-body-md appearance-none">
+<option>10:00 AM - 12:00 PM</option>
+<option>12:00 PM - 02:00 PM</option>
+<option>02:00 PM - 04:00 PM</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-outline pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Personalization -->
+<div class="relative">
+<textarea class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:border-tertiary focus:ring-1 focus:ring-tertiary font-body-md text-body-md placeholder:text-outline resize-none h-24" placeholder="Add a sweet note (optional)..."></textarea>
+</div>
+</div>
+<!-- Action Area -->
+<div class="mt-4 flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<!-- Quantity -->
+<div class="flex items-center border border-outline-variant rounded-lg bg-surface h-14">
+<button class="px-4 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="remove">remove</span></button>
+<span class="font-label-md text-label-md text-primary w-6 text-center">1</span>
+<button class="px-4 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="add">add</span></button>
+</div>
+<!-- CTA -->
+<button class="flex-1 bg-secondary hover:bg-secondary-container text-on-secondary font-headline-md text-body-lg h-14 rounded-lg shadow-[0_4px_14px_0_rgba(184,0,73,0.39)] hover:shadow-[0_6px_20px_rgba(184,0,73,0.23)] hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="shopping_bag">shopping_bag</span>
+                                Add to Cart - $18.00
+                            </button>
+</div>
+<p class="text-center text-sm text-on-surface-variant flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified_user">verified_user</span> Secure checkout. Artisanal guarantee.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-high full-width bottom-0 border-t border-outline-variant mt-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<!-- Brand & Copyright -->
+<div class="flex flex-col gap-4 md:col-span-1">
+<a class="font-headline-md text-headline-md text-primary font-bold" href="#">Liliyum Patisserie</a>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                    © 2024 Liliyum Patisserie &amp; Cafe. Artisanal Craftsmanship for Everyday Celebrations.
+                </p>
+</div>
+<!-- Quick Links -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md text-primary mb-2 uppercase tracking-wider">Explore</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md focus:ring-2 focus:ring-tertiary rounded-sm w-fit" href="#">Cakes</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md focus:ring-2 focus:ring-tertiary rounded-sm w-fit" href="#">Chocolates</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md focus:ring-2 focus:ring-tertiary rounded-sm w-fit" href="#">Hampers</a>
+</div>
+<!-- Support Links -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md text-primary mb-2 uppercase tracking-wider">Support</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md focus:ring-2 focus:ring-tertiary rounded-sm w-fit" href="#">Contact Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md focus:ring-2 focus:ring-tertiary rounded-sm w-fit" href="#">Shipping Info</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md focus:ring-2 focus:ring-tertiary rounded-sm w-fit" href="#">Privacy Policy</a>
+</div>
+<!-- Socials -->
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-primary mb-2 uppercase tracking-wider">Follow the Yum</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors focus:ring-2 focus:ring-tertiary" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span> <!-- Placeholder for social icons -->
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors focus:ring-2 focus:ring-tertiary" href="#">
+<span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors focus:ring-2 focus:ring-tertiary" href="#">
+<span class="material-symbols-outlined" data-icon="push_pin">push_pin</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple script to handle nav blur on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('topNav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('shadow-sm');
+            }
+        });
+    </script>
+</body></html>

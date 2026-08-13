@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Collections - Liliyum Patisserie</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#eee7e4",
+                        "secondary-fixed": "#ffd9de",
+                        "on-tertiary-fixed": "#241a00",
+                        "secondary-fixed-dim": "#ffb2be",
+                        "surface-container-highest": "#e8e1de",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f4ece9",
+                        "surface-dim": "#e0d8d6",
+                        "inverse-primary": "#eabcb8",
+                        "surface-tint": "#795553",
+                        "outline-variant": "#d4c3c1",
+                        "on-primary-container": "#bd928f",
+                        "on-secondary-container": "#fffbff",
+                        "background": "#fff8f5",
+                        "secondary-container": "#e2165f",
+                        "tertiary-container": "#cba72f",
+                        "primary-fixed": "#ffdad7",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e8e1de",
+                        "on-primary-fixed-variant": "#5f3e3c",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-surface": "#1e1b19",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#eabcb8",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#504443",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#900038",
+                        "surface": "#fff8f5",
+                        "secondary": "#b80049",
+                        "on-background": "#1e1b19",
+                        "error": "#ba1a1a",
+                        "primary": "#321716",
+                        "outline": "#827472",
+                        "tertiary-fixed": "#ffe088",
+                        "inverse-on-surface": "#f7efec",
+                        "surface-container-low": "#faf2ef",
+                        "surface-bright": "#fff8f5",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#33302e",
+                        "on-tertiary-container": "#4e3d00",
+                        "on-secondary-fixed": "#400014",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-primary-fixed": "#2e1413",
+                        "tertiary": "#735c00",
+                        "primary-container": "#4a2c2a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "section-gap": "120px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Playfair Display"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "body-md": ["Manrope"],
+                        "label-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fff8f5; color: #1e1b19; }
+        h1, h2, h3, h4, h5, h6, .font-display, .font-headline { font-family: 'Playfair Display', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.4); }
+        .organic-blob { position: absolute; border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; animation: morph 8s ease-in-out infinite; z-index: 0; }
+        @keyframes morph {
+            0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+            34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+            67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 bg-background/80 backdrop-blur-md dark:bg-background/80 shadow-sm w-full transition-all duration-300" id="main-nav">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Mobile Menu Button -->
+<button aria-label="Open menu" class="md:hidden text-primary p-2 hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined text-[28px]">menu</span>
+</button>
+<!-- Brand Logo -->
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary shrink-0 z-10 relative" href="#">
+                Liliyum Patisserie
+            </a>
+<!-- Desktop Navigation Links -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-secondary border-b-2 border-secondary pb-1 font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Cakes</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Chocolates</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Hampers</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Cafe</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Our Story</a>
+</div>
+<!-- Actions (Search, Cart, Order Now) -->
+<div class="flex items-center space-x-2 md:space-x-4">
+<button aria-label="Search" class="text-primary p-2 hover:bg-surface-container rounded-full transition-colors hidden sm:block">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</button>
+<button aria-label="Cart" class="text-primary p-2 hover:bg-surface-container rounded-full transition-colors relative">
+<span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+<a class="hidden md:flex bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-label-md text-label-md hover:bg-secondary/90 transition-all shadow-[0_4px_14px_0_rgba(184,0,73,0.39)] hover:shadow-[0_6px_20px_rgba(184,0,73,0.23)] hover:-translate-y-0.5 active:scale-95 duration-150" href="#">
+                    Order Now
+                </a>
+</div>
+</div>
+</nav>
+<!-- Page Header (Hero) -->
+<header class="relative pt-24 pb-16 md:pt-32 md:pb-24 px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="organic-blob bg-secondary-fixed/40 w-[400px] h-[400px] top-[-100px] left-[-100px] mix-blend-multiply filter blur-3xl opacity-60"></div>
+<div class="organic-blob bg-tertiary-fixed/30 w-[500px] h-[500px] bottom-[-150px] right-[-100px] mix-blend-multiply filter blur-3xl opacity-60" style="animation-delay: -3s;"></div>
+<div class="max-w-container-max mx-auto text-center relative z-10">
+<h1 class="font-display-xl text-headline-lg-mobile md:text-display-xl text-primary mb-6">Our Collections</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Discover our artisanal range of hand-crafted delicacies, perfect for every celebration and everyday indulgence.
+            </p>
+</div>
+</header>
+<!-- Main Content: Filters & Grid -->
+<main class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-section-gap relative z-10">
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Sidebar / Filters -->
+<aside class="w-full lg:w-64 shrink-0 mb-8 lg:mb-0">
+<div class="sticky top-[100px] bg-surface-container-low p-6 rounded-xl border border-surface-dim">
+<div class="mb-8">
+<h3 class="font-headline-md text-body-lg font-bold text-primary mb-4 border-b border-surface-variant pb-2">Categories</h3>
+<ul class="space-y-3">
+<li>
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input checked="" class="form-radio text-secondary focus:ring-secondary border-outline bg-surface-container" name="category" type="radio"/>
+<span class="font-body-md text-body-md text-primary group-hover:text-secondary transition-colors font-semibold">All Collections</span>
+</label>
+</li>
+<li>
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input class="form-radio text-secondary focus:ring-secondary border-outline bg-surface-container" name="category" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Celebration Cakes</span>
+</label>
+</li>
+<li>
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input class="form-radio text-secondary focus:ring-secondary border-outline bg-surface-container" name="category" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Luxury Indulgence</span>
+</label>
+</li>
+<li>
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input class="form-radio text-secondary focus:ring-secondary border-outline bg-surface-container" name="category" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Cheesecakes</span>
+</label>
+</li>
+<li>
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input class="form-radio text-secondary focus:ring-secondary border-outline bg-surface-container" name="category" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Belgian Chocolates</span>
+</label>
+</li>
+<li>
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input class="form-radio text-secondary focus:ring-secondary border-outline bg-surface-container" name="category" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Hampers</span>
+</label>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="font-headline-md text-body-lg font-bold text-primary mb-4 border-b border-surface-variant pb-2">Sort By</h3>
+<div class="relative">
+<select class="w-full bg-surface border border-outline-variant text-on-surface font-body-md text-body-md rounded-lg focus:ring-secondary focus:border-secondary py-2.5 pl-4 pr-10 appearance-none cursor-pointer">
+<option>Popularity</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Newest Arrivals</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1">
+<!-- Active Filters & Count -->
+<div class="flex justify-between items-center mb-6">
+<p class="font-body-md text-body-md text-on-surface-variant">Showing <span class="font-semibold text-primary">24</span> products</p>
+<div class="flex gap-2">
+<span class="inline-flex items-center bg-secondary-fixed/50 text-primary font-label-md text-[12px] px-3 py-1 rounded-full">
+                            All Collections <button class="ml-1 hover:text-secondary"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 border border-surface-variant flex flex-col h-full">
+<div class="relative aspect-[4/3] overflow-hidden bg-[#e0f2fe]"> <!-- Pastel backdrop -->
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="A beautifully crafted tiered celebration cake with soft pink frosting, delicate sugar flowers cascading down the side, placed on a pristine white marble cake stand. Bright, airy lighting highlights the smooth texture of the fondant. High-end patisserie aesthetic, joyful and celebratory mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv_ETh6N6M4Y2pkvVDa2rJchw0cYqYGcPXdsy1NjelL3bcwl-jhe37WWM_MoGbR8HOaE29RitgBzBniu1Gnbj1k-uOEfMTzMjti7KGkgWh2y7gcxA3gYdNq5_Iszg7Noy1CkwK2QnjZR2i-6nJsXHQ6WJVdD3MLvW-Sz2XwMGJgxqPnlbT1q3XOiUgQRHcGfZD9pAt3cPzBQWnCHG29ZkZ50i9jYI6RxdPUEyzuS5yz9jBrCfbQzl_rg"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5">
+<span class="bg-surface/90 backdrop-blur text-primary font-label-md text-[11px] uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">Bestseller</span>
+</div>
+<button aria-label="Add to wishlist" class="absolute top-3 right-3 w-8 h-8 bg-surface/90 backdrop-blur rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-body-lg font-bold text-primary leading-tight group-hover:text-secondary transition-colors">Rose &amp; Pistachio Dream</h3>
+<span class="font-body-md text-body-lg font-semibold text-primary">$65</span>
+</div>
+<p class="font-body-md text-label-md text-on-surface-variant mb-4 line-clamp-2">Delicate rose sponge layered with rich pistachio ganache and light buttercream.</p>
+<div class="mt-auto pt-4 border-t border-surface-variant flex gap-2">
+<button class="flex-1 bg-primary-fixed/30 hover:bg-primary-fixed text-primary font-label-md text-label-md py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span> Add
+                                </button>
+<button class="w-10 h-10 border border-outline hover:border-primary text-on-surface-variant hover:text-primary rounded-lg flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 border border-surface-variant flex flex-col h-full">
+<div class="relative aspect-[4/3] overflow-hidden bg-[#fce7f3]">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="A decadent dark chocolate truffle cake sliced to reveal a gooey center, garnished with fresh raspberries and gold leaf flakes. Placed on a dark slate plate with dramatic, moody lighting emphasizing the rich chocolate textures. Luxurious, indulgent, premium patisserie style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhtBQoQJSpaNY45-m3jH7_vxw2NE_HW9cFc41fUXgTOzME2l_MpIO8MXOHDchaDp_Y_ck5I0pr7LGWUzxHXJdcEn1F1agTFUsBocczgBzqAvj-G3uf8xxQ0BuYjPW65URdEJocS1LTLXLZUz9UCAtlnSek24uaASy4c4Ui-hw_DPCL4WgBYGpQMiOq0I5i6R8t4V_jwR3lm8AyBPmDG_pkE4jp22_rp70uIWKKl-IZQRodNvSfCAoIMw"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5">
+<span class="bg-tertiary-fixed/90 backdrop-blur text-on-tertiary-fixed font-label-md text-[11px] uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">Signature</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-body-lg font-bold text-primary leading-tight group-hover:text-secondary transition-colors">Belgian Truffle Decadence</h3>
+<span class="font-body-md text-body-lg font-semibold text-primary">$45</span>
+</div>
+<p class="font-body-md text-label-md text-on-surface-variant mb-4 line-clamp-2">Intense 70% dark chocolate mousse with a liquid truffle center, dusted in cocoa.</p>
+<div class="mt-auto pt-4 border-t border-surface-variant flex gap-2">
+<button class="flex-1 bg-primary-fixed/30 hover:bg-primary-fixed text-primary font-label-md text-label-md py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span> Add
+                                </button>
+<button class="w-10 h-10 border border-outline hover:border-primary text-on-surface-variant hover:text-primary rounded-lg flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 border border-surface-variant flex flex-col h-full">
+<div class="relative aspect-[4/3] overflow-hidden bg-[#ffedd5]">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="A classic New York style cheesecake slice topped with a glossy mixed berry compote, sitting on a rustic ceramic plate. Soft, warm lighting highlighting the creamy texture of the cheese and the vibrant red of the berries. Comforting, high-quality bakery aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpLwnKP0yn6aGelBsIaCjmNwsY01eQ0gYh8Yd3HFs12szabM9ag2PEhLYsIkByIZHy7_E5GvkwGVaxLu7t3oQZztxA9hAcPdJbnJYSJQMYeQGmirR5DMKi8b9RSnM0htKNVJDh1rqzEKNMNkkfTipdlIAVi4SZEovBJPO9Hy8VcNZYnbTE2mXvktQCm7lxsvF3UWJYDH-b4VXGrWTmVoYTeMt5YFEvIZaQnYfPNwqJuuv190UVgms6kw"/>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-body-lg font-bold text-primary leading-tight group-hover:text-secondary transition-colors">Classic Berry Cheesecake</h3>
+<span class="font-body-md text-body-lg font-semibold text-primary">$38</span>
+</div>
+<p class="font-body-md text-label-md text-on-surface-variant mb-4 line-clamp-2">Rich and creamy vanilla bean cheesecake topped with our house-made summer berry compote.</p>
+<div class="mt-auto pt-4 border-t border-surface-variant flex gap-2">
+<button class="flex-1 bg-primary-fixed/30 hover:bg-primary-fixed text-primary font-label-md text-label-md py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span> Add
+                                </button>
+<button class="w-10 h-10 border border-outline hover:border-primary text-on-surface-variant hover:text-primary rounded-lg flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 border border-surface-variant flex flex-col h-full">
+<div class="relative aspect-[4/3] overflow-hidden bg-[#e0e7ff]">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="An assortment of artisanal macarons in pastel colors (lavender, mint, peach) neatly arranged in an elegant rectangular gift box with a clear lid. A soft silk ribbon is tied around it. Bright, clean lighting. Premium gifting, sophisticated and delicate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy0zMdpVJOmdYg1brL8paSfgPYHw1wOWp5oi1XmlzUB5IrU0K-orIT8AoArdl5nMGLu7XCiO9xzm9tmk46vfZKmOq_ddYxJpLOBBAzOfIGRvTFi4xkd2_U5Vbz-XFi71T3NirNTZfW_kVCJVL98Zmg7GDqw_YJG5cluFI6a1h042JpfA2N5iDBqnPXTDUY6AN8ucWw9JXSMclkyToQ77ESOo_pFut4KhUy-kIimehe9EJl8l365FYQsA"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5">
+<span class="bg-surface/90 backdrop-blur text-primary font-label-md text-[11px] uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">Gift Idea</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-body-lg font-bold text-primary leading-tight group-hover:text-secondary transition-colors">Macaron Symphony Box</h3>
+<span class="font-body-md text-body-lg font-semibold text-primary">$32</span>
+</div>
+<p class="font-body-md text-label-md text-on-surface-variant mb-4 line-clamp-2">A curated selection of 12 delicate macarons in our most popular seasonal flavors.</p>
+<div class="mt-auto pt-4 border-t border-surface-variant flex gap-2">
+<button class="flex-1 bg-primary-fixed/30 hover:bg-primary-fixed text-primary font-label-md text-label-md py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span> Add
+                                </button>
+<button class="w-10 h-10 border border-outline hover:border-primary text-on-surface-variant hover:text-primary rounded-lg flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 border border-surface-variant flex flex-col h-full">
+<div class="relative aspect-[4/3] overflow-hidden bg-[#fef08a]">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="A beautifully glazed lemon tart with a perfectly piped ring of toasted meringue peaks on top. Sitting on a fine china plate with a silver fork beside it. Sunlight streaming in, creating a warm, inviting afternoon tea mood. Bright, zesty colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7gznzKLQoZvKxw3n3d_LWdmearuJ06na_CPtApRpqrCo5AauNkHl1wHvffs5NAjNLq8cCJ-nN7jd9cKmLn15iXInT1qV68NZCUIOIlP5m_ypySjWq67IVNJ8bD4u7QQVraHGVMoL0ry1MVHjbSiX7eFBi2nZulbvoCd0VtCLA8HbQlPyxBj0ajd_edwFfz78LmRhtPyGGJJpBmd_z8JuERecjkjLnJI8kmTtY0A5ty7_uIEM2oxFt2w"/>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-body-lg font-bold text-primary leading-tight group-hover:text-secondary transition-colors">Lemon Meringue Tart</h3>
+<span class="font-body-md text-body-lg font-semibold text-primary">$28</span>
+</div>
+<p class="font-body-md text-label-md text-on-surface-variant mb-4 line-clamp-2">Zesty lemon curd in a buttery shortbread crust, topped with torched Italian meringue.</p>
+<div class="mt-auto pt-4 border-t border-surface-variant flex gap-2">
+<button class="flex-1 bg-primary-fixed/30 hover:bg-primary-fixed text-primary font-label-md text-label-md py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span> Add
+                                </button>
+<button class="w-10 h-10 border border-outline hover:border-primary text-on-surface-variant hover:text-primary rounded-lg flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 border border-surface-variant flex flex-col h-full">
+<div class="relative aspect-[4/3] overflow-hidden bg-[#dcfce7]">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="Several small, elegant glass jars filled with layered desserts, visible through the glass: crushed biscuit base, creamy cheesecake filling, and green matcha gelee on top. Arranged on a wooden serving board with fresh mint leaves scattered. Clean, modern, artisanal presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_vT2NmHUKgdfsFQOR4RLhvaOxS8dLYny2SgTdQnpE-uNToneHELNRgJy7soSdL1cg2MLCVcn9XaVjrDNx_IudJl-Mv_2O_XsX0xsAMjuSwj2tnwEDZwNdAgrcIx1Y-WeDnGhasAxSiKtqyr0S-T1IHrVdRI20-q-7KO8csDTuSOZYGz3CAkso-tYtyHjF6Wp-8udV8j8S8OpbDbGSX8w4bqYTu_LzPkaS7WDBOUo5wTM5oenejreKsg"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5">
+<span class="bg-secondary/90 backdrop-blur text-on-secondary font-label-md text-[11px] uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">New</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-body-lg font-bold text-primary leading-tight group-hover:text-secondary transition-colors">Matcha Jar Cake Set</h3>
+<span class="font-body-md text-body-lg font-semibold text-primary">$24</span>
+</div>
+<p class="font-body-md text-label-md text-on-surface-variant mb-4 line-clamp-2">Set of two premium layered desserts featuring ceremonial matcha and white chocolate.</p>
+<div class="mt-auto pt-4 border-t border-surface-variant flex gap-2">
+<button class="flex-1 bg-primary-fixed/30 hover:bg-primary-fixed text-primary font-label-md text-label-md py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span> Add
+                                </button>
+<button class="w-10 h-10 border border-outline hover:border-primary text-on-surface-variant hover:text-primary rounded-lg flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex justify-center">
+<nav aria-label="Pagination" class="flex items-center space-x-2">
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center transition-colors">1</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center justify-center transition-colors">2</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center justify-center transition-colors">3</button>
+<span class="text-on-surface-variant">...</span>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-high border-t border-outline-variant mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<!-- Brand Column -->
+<div class="col-span-1 md:col-span-1 flex flex-col items-start">
+<span class="font-headline-md text-headline-md text-primary mb-4 font-bold">Liliyum</span>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Artisanal Craftsmanship for Everyday Celebrations.</p>
+<div class="flex space-x-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-tertiary rounded-full p-1" href="#"><span class="material-symbols-outlined">qr_code_2</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-tertiary rounded-full p-1" href="#"><span class="material-symbols-outlined">photo_camera</span></a> <!-- Instagram approx -->
+<a class="text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-tertiary rounded-full p-1" href="#"><span class="material-symbols-outlined">push_pin</span></a> <!-- Pinterest approx -->
+</div>
+</div>
+<!-- Links Column 1 -->
+<div class="col-span-1">
+<h4 class="font-label-md text-label-md text-primary font-bold mb-4 uppercase tracking-wider">Shop</h4>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Cakes</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Chocolates</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Hampers</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Desserts</a></li>
+</ul>
+</div>
+<!-- Links Column 2 -->
+<div class="col-span-1">
+<h4 class="font-label-md text-label-md text-primary font-bold mb-4 uppercase tracking-wider">Help</h4>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping Info</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">FAQ</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<!-- Newsletter Column -->
+<div class="col-span-1 md:col-span-1">
+<h4 class="font-label-md text-label-md text-primary font-bold mb-4 uppercase tracking-wider">Stay Sweet</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Subscribe for updates on new collections and special offers.</p>
+<form class="flex gap-2">
+<input class="w-full bg-surface border-outline-variant rounded-lg focus:ring-secondary focus:border-secondary font-body-md text-body-md py-2 px-3" placeholder="Email address" type="email"/>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors font-label-md" type="button">
+<span class="material-symbols-outlined text-[20px] pt-1">arrow_forward</span>
+</button>
+</form>
+</div>
+</div>
+<!-- Copyright -->
+<div class="border-t border-outline-variant/50 py-6 px-margin-mobile md:px-margin-desktop text-center">
+<p class="font-body-md text-label-md text-on-surface-variant">© 2024 Liliyum Patisserie &amp; Cafe. Artisanal Craftsmanship for Everyday Celebrations.</p>
+</div>
+</footer>
+</body></html>

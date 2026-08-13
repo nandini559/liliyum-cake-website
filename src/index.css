@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #fbf4ea;
+    color: #222225;
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 25s linear infinite;
+}
+
+.scallop-divider-red {
+  width: 100%;
+  height: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath d='M0,0 C15,20 35,20 50,0 C65,20 85,20 100,0 C115,20 135,20 150,0 C165,20 185,20 200,0 C215,20 235,20 250,0 C265,20 285,20 300,0 C315,20 335,20 350,0 C365,20 385,20 400,0 C415,20 435,20 450,0 C465,20 485,20 500,0 C565,20 585,20 600,0 C615,20 635,20 650,0 C665,20 685,20 700,0 C715,20 735,20 750,0 C765,20 785,20 800,0 C815,20 835,20 850,0 C865,20 885,20 900,0 C915,20 935,20 950,0 C965,20 985,20 1000,0 C1015,20 1035,20 1050,0 C1065,20 1085,20 1100,0 C1115,20 1135,20 1150,0 C1165,20 1185,20 1200,0 L1200,40 L0,40 Z' fill='%23801818'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 60px 20px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
