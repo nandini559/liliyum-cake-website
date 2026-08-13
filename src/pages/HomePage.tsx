@@ -1,26 +1,24 @@
-import React, { useState } from 'react';
-import { useCart } from '../context/CartContext';
-import { PRODUCTS } from '../data/products';
+import React, { useState } from "react";
+import { useCart } from "../context/CartContext";
+import { PRODUCTS } from "../data/products";
 
 export const HomePage: React.FC = () => {
   const { navigateTo, addToCart, setIsCartOpen, showToast } = useCart();
-  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterEmail, setNewsletterEmail] = useState("");
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (newsletterEmail) {
-      showToast('Thank you! 15% discount code sent to your email.');
-      setNewsletterEmail('');
+      showToast("Thank you! 15% discount code sent to your email.");
+      setNewsletterEmail("");
     }
   };
 
   return (
     <main className="w-full font-sans bg-[#fbf4ea] text-[#222225] overflow-hidden">
-      
       {/* 1. HERO SPLIT OFFER SECTION */}
       <section className="max-w-[1280px] mx-auto px-4 md:px-12 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-          
           {/* Left Deep Red Hero Card */}
           <div className="lg:col-span-6 bg-[#801818] text-white p-8 md:p-12 rounded-3xl flex flex-col justify-between space-y-6 shadow-lg">
             <div className="space-y-4">
@@ -31,7 +29,9 @@ export const HomePage: React.FC = () => {
                 HEY, YOUR CHEESECAKE IS ALMOST READY!
               </h1>
               <p className="text-xs sm:text-sm text-[#f5d5d8] leading-relaxed max-w-md">
-                A rich and creamy cheesecake made with smooth cream cheese, set on a crunchy biscuit crust and topped with fresh strawberries and sweet strawberry glaze.
+                A rich and creamy cheesecake made with smooth cream cheese, set
+                on a crunchy biscuit crust and topped with fresh strawberries
+                and sweet strawberry glaze.
               </p>
             </div>
             <div>
@@ -60,7 +60,8 @@ export const HomePage: React.FC = () => {
 
       {/* 2. TICKER BAR */}
       <div className="bg-[#801818] text-white text-[11px] font-bold py-2.5 px-4 uppercase tracking-widest text-center">
-        • FRESHLY BAKED EVERYDAY • DREAMY, FRESH & DELICIOUS • MADE TO SWEETEN YOUR DAY • BRINGING YOU THE BEST CHEESECAKE
+        • FRESHLY BAKED EVERYDAY • DREAMY, FRESH & DELICIOUS • MADE TO SWEETEN
+        YOUR DAY • BRINGING YOU THE BEST CHEESECAKE
       </div>
 
       {/* 3. ASSORTMENT SECTION */}
@@ -72,7 +73,7 @@ export const HomePage: React.FC = () => {
         {/* 4 Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div
-            onClick={() => navigateTo('collections')}
+            onClick={() => navigateTo("collections")}
             className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer group p-3 border border-[#ebd8c5]"
           >
             <div className="h-48 rounded-2xl overflow-hidden mb-3">
@@ -82,11 +83,13 @@ export const HomePage: React.FC = () => {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <div className="py-2 font-display font-extrabold text-sm text-[#222225]">Cheese Cakes</div>
+            <div className="py-2 font-display font-extrabold text-sm text-[#222225]">
+              Cheese Cakes
+            </div>
           </div>
 
           <div
-            onClick={() => navigateTo('collections')}
+            onClick={() => navigateTo("collections")}
             className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer group p-3 border border-[#ebd8c5]"
           >
             <div className="h-48 rounded-2xl overflow-hidden mb-3">
@@ -96,11 +99,13 @@ export const HomePage: React.FC = () => {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <div className="py-2 font-display font-extrabold text-sm text-[#222225]">Wedding Cakes</div>
+            <div className="py-2 font-display font-extrabold text-sm text-[#222225]">
+              Wedding Cakes
+            </div>
           </div>
 
           <div
-            onClick={() => navigateTo('collections')}
+            onClick={() => navigateTo("collections")}
             className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer group p-3 border border-[#ebd8c5]"
           >
             <div className="h-48 rounded-2xl overflow-hidden mb-3">
@@ -110,11 +115,13 @@ export const HomePage: React.FC = () => {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <div className="py-2 font-display font-extrabold text-sm text-[#222225]">Cup Cakes</div>
+            <div className="py-2 font-display font-extrabold text-sm text-[#222225]">
+              Cup Cakes
+            </div>
           </div>
 
           <div
-            onClick={() => navigateTo('collections')}
+            onClick={() => navigateTo("collections")}
             className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer group p-3 border border-[#ebd8c5]"
           >
             <div className="h-48 rounded-2xl overflow-hidden mb-3">
@@ -124,7 +131,9 @@ export const HomePage: React.FC = () => {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <div className="py-2 font-display font-extrabold text-sm text-[#222225]">Brownies</div>
+            <div className="py-2 font-display font-extrabold text-sm text-[#222225]">
+              Brownies
+            </div>
           </div>
         </div>
 
@@ -154,8 +163,12 @@ export const HomePage: React.FC = () => {
                   🎨
                 </div>
                 <div>
-                  <h4 className="font-extrabold text-sm text-[#801818]">Customize Cakes</h4>
-                  <p className="text-[11px] text-[#666666]">Crafted tailored for your special moments.</p>
+                  <h4 className="font-extrabold text-sm text-[#801818]">
+                    Customize Cakes
+                  </h4>
+                  <p className="text-[11px] text-[#666666]">
+                    Crafted tailored for your special moments.
+                  </p>
                 </div>
               </div>
 
@@ -164,8 +177,12 @@ export const HomePage: React.FC = () => {
                   🚚
                 </div>
                 <div>
-                  <h4 className="font-extrabold text-sm text-[#801818]">Free Shipping</h4>
-                  <p className="text-[11px] text-[#666666]">Delivered in temperature-controlled boxes.</p>
+                  <h4 className="font-extrabold text-sm text-[#801818]">
+                    Free Shipping
+                  </h4>
+                  <p className="text-[11px] text-[#666666]">
+                    Delivered in temperature-controlled boxes.
+                  </p>
                 </div>
               </div>
             </div>
@@ -186,8 +203,12 @@ export const HomePage: React.FC = () => {
                   ✨
                 </div>
                 <div>
-                  <h4 className="font-extrabold text-sm text-[#801818]">New Design</h4>
-                  <p className="text-[11px] text-[#666666]">Contemporary artisanal aesthetics.</p>
+                  <h4 className="font-extrabold text-sm text-[#801818]">
+                    New Design
+                  </h4>
+                  <p className="text-[11px] text-[#666666]">
+                    Contemporary artisanal aesthetics.
+                  </p>
                 </div>
               </div>
 
@@ -196,8 +217,12 @@ export const HomePage: React.FC = () => {
                   👑
                 </div>
                 <div>
-                  <h4 className="font-extrabold text-sm text-[#801818]">High Quality Service</h4>
-                  <p className="text-[11px] text-[#666666]">Satisfaction guaranteed in every slice.</p>
+                  <h4 className="font-extrabold text-sm text-[#801818]">
+                    High Quality Service
+                  </h4>
+                  <p className="text-[11px] text-[#666666]">
+                    Satisfaction guaranteed in every slice.
+                  </p>
                 </div>
               </div>
             </div>
@@ -216,19 +241,27 @@ export const HomePage: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <div className="bg-white p-6 rounded-3xl shadow-sm border border-[#ebd8c5] space-y-4">
-            <div className="text-[#801818] font-display text-4xl font-extrabold">““</div>
+            <div className="text-[#801818] font-display text-4xl font-extrabold">
+              ““
+            </div>
             <p className="text-xs text-[#666666] leading-relaxed">
-              "The Cravie Strawberry Cheesecake is out of this world! Rich, creamy, and ridiculously fresh."
+              "The Cravie Strawberry Cheesecake is out of this world! Rich,
+              creamy, and ridiculously fresh."
             </p>
             <div>
-              <h5 className="font-extrabold text-xs text-[#222225]">Laura W.</h5>
+              <h5 className="font-extrabold text-xs text-[#222225]">
+                Laura W.
+              </h5>
             </div>
           </div>
 
           <div className="bg-white p-6 rounded-3xl shadow-sm border border-[#ebd8c5] space-y-4">
-            <div className="text-[#801818] font-display text-4xl font-extrabold">““</div>
+            <div className="text-[#801818] font-display text-4xl font-extrabold">
+              ““
+            </div>
             <p className="text-xs text-[#666666] leading-relaxed">
-              "Best cheesecake patisserie in town. The crust texture and glaze pairing are perfection."
+              "Best cheesecake patisserie in town. The crust texture and glaze
+              pairing are perfection."
             </p>
             <div>
               <h5 className="font-extrabold text-xs text-[#222225]">Anna R.</h5>
@@ -236,12 +269,17 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="bg-white p-6 rounded-3xl shadow-sm border border-[#ebd8c5] space-y-4">
-            <div className="text-[#801818] font-display text-4xl font-extrabold">““</div>
+            <div className="text-[#801818] font-display text-4xl font-extrabold">
+              ““
+            </div>
             <p className="text-xs text-[#666666] leading-relaxed">
-              "Ordered a whole cheesecake for our family dinner. Delivered fresh and disappeared in minutes!"
+              "Ordered a whole cheesecake for our family dinner. Delivered fresh
+              and disappeared in minutes!"
             </p>
             <div>
-              <h5 className="font-extrabold text-xs text-[#222225]">David L.</h5>
+              <h5 className="font-extrabold text-xs text-[#222225]">
+                David L.
+              </h5>
             </div>
           </div>
         </div>
@@ -254,9 +292,13 @@ export const HomePage: React.FC = () => {
             ★ 15% OFF YOUR FIRST ORDER ★
           </div>
           <h2 className="font-display text-3xl font-extrabold max-w-xl mx-auto">
-            Get special offers and all the latest products to your inbox! + 15% off your first order
+            Get special offers and all the latest products to your inbox! + 15%
+            off your first order
           </h2>
-          <form onSubmit={handleSubscribe} className="max-w-md mx-auto space-y-3">
+          <form
+            onSubmit={handleSubscribe}
+            className="max-w-md mx-auto space-y-3"
+          >
             <input
               type="email"
               value={newsletterEmail}
@@ -274,7 +316,6 @@ export const HomePage: React.FC = () => {
           </form>
         </div>
       </section>
-
     </main>
   );
 };

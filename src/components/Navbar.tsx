@@ -29,85 +29,69 @@ export const Navbar: React.FC = () => {
         <div className="flex justify-between items-center w-full px-6 md:px-12 py-3.5 max-w-[1280px] mx-auto">
           {/* Left Navigation Links */}
           <div className="hidden md:flex items-center space-x-6 text-xs font-bold uppercase tracking-wider text-[#222225]">
-           <button
-  type="button"
-  onClick={() => navigateTo("home")}
-  className={`transition-colors hover:text-[#801818] ${
-    activePage === "home"
-      ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
-      : ""
-  }`}
->
-  HOME
-</button>
+            {/* Logo */}
+            <button
+              type="button"
+              onClick={() => navigateTo("home")}
+              className="flex items-center justify-center group"
+            >
+              <img
+                src="https://liliyum.com/cdn/shop/files/liliyum-logos-allsizes_Instagram-profile_copy_400x.png?v=1613708813"
+                alt="Liliyum Cakes"
+                className="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+            </button>
 
-           <button
-  type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                navigateTo("collections");
-              }}
-              className={`transition-colors hover:text-[#801818] ${
-                activePage === "collections"
+            <button
+              type="button"
+              onClick={() => navigateTo("home")}
+              className={`transition-colors hover:text-[#801818] ${activePage === "home"
                   ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
                   : ""
-              }`}
+                }`}
+            >
+              HOME
+            </button>
+
+            <button
+              type="button"
+              onClick={() => navigateTo("collections")}
+              className={`transition-colors hover:text-[#801818] ${activePage === "collections"
+                  ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
+                  : ""
+                }`}
             >
               COLLECTIONS
             </button>
 
             <button
-  type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                navigateTo("order");
-              }}
-              className={`transition-colors hover:text-[#801818] ${
-                activePage === "collections"
+              type="button"
+              onClick={() => navigateTo("order")}
+              className={`transition-colors hover:text-[#801818] ${activePage === "order"
                   ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
                   : ""
-              }`}
+                }`}
             >
-              Order Cake
+              ORDER CAKES
             </button>
 
             <button
               type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                navigateTo("about");
-              }}
-              className={`transition-colors hover:text-[#801818] ${
-                activePage === "about"
+              onClick={() => navigateTo("about")}
+              className={`transition-colors hover:text-[#801818] ${activePage === "about"
                   ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
                   : ""
-              }`}
+                }`}
             >
               OUR STORY
             </button>
           </div>
 
-          {/* Center Logo */}
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              navigateTo("home");
-            }}
-            className="flex items-center justify-center group"
-          >
-            <div className="bg-[#801818] text-white px-6 py-2 rounded-full shadow-md border-2 border-[#661212] group-hover:bg-[#661212] transition-colors flex items-center gap-1.5">
-              <span className="font-display font-extrabold text-2xl tracking-tighter text-white">
-                Cravie
-              </span>
-            </div>
-          </button>
-
           {/* Right Navigation & Action Icons */}
           <div className="flex items-center space-x-4 text-xs font-bold uppercase tracking-wider text-[#222225]">
             {/* Search */}
             <button
-            type="button"
+              type="button"
               aria-label="Search"
               onClick={() => setIsSearchOpen(true)}
               className="text-[#222225] p-1.5 hover:bg-[#fce8ea] rounded-full transition-colors"
@@ -120,7 +104,7 @@ export const Navbar: React.FC = () => {
 
             {/* Cart */}
             <button
-            type="button"
+              type="button"
               aria-label="Cart"
               onClick={() => setIsCartOpen(true)}
               className="text-[#222225] p-1.5 hover:bg-[#fce8ea] rounded-full transition-colors relative"
@@ -164,8 +148,7 @@ export const Navbar: React.FC = () => {
           <div className="md:hidden bg-[#fbf4ea] border-t border-[#ebd8c5] px-6 py-4 space-y-3 font-bold text-xs uppercase tracking-wider">
             <button
               type="button"
-              onClick={(e) => {
-                e.preventDefault();
+              onClick={() => {
                 navigateTo("home");
                 setMobileMenuOpen(false);
               }}
@@ -176,8 +159,7 @@ export const Navbar: React.FC = () => {
 
             <button
               type="button"
-              onClick={(e) => {
-                e.preventDefault();
+              onClick={() => {
                 navigateTo("collections");
                 setMobileMenuOpen(false);
               }}
@@ -187,9 +169,9 @@ export const Navbar: React.FC = () => {
             </button>
 
             <button
+
               type="button"
-              onClick={(e) => {
-                e.preventDefault();
+              onClick={() => {
                 navigateTo("order");
                 setMobileMenuOpen(false);
               }}
@@ -198,10 +180,9 @@ export const Navbar: React.FC = () => {
               Order / Customize Cake
             </button>
 
-           <button
+            <button
               type="button"
-              onClick={(e) => {
-                e.preventDefault();
+              onClick={() => {
                 navigateTo("about");
                 setMobileMenuOpen(false);
               }}

@@ -1,17 +1,30 @@
-import React from 'react';
-import { useCart } from '../context/CartContext';
+import React from "react";
+import { useCart } from "../context/CartContext";
 
 export const CartDrawer: React.FC = () => {
-  const { isCartOpen, setIsCartOpen, cart, updateQuantity, removeFromCart, cartTotal, clearCart, navigateTo, showToast } = useCart();
+  const {
+    isCartOpen,
+    setIsCartOpen,
+    cart,
+    updateQuantity,
+    removeFromCart,
+    cartTotal,
+    clearCart,
+    navigateTo,
+    showToast,
+  } = useCart();
 
   if (!isCartOpen) return null;
 
   const freeShippingThreshold = 75;
-  const progressPercent = Math.min(100, (cartTotal / freeShippingThreshold) * 100);
+  const progressPercent = Math.min(
+    100,
+    (cartTotal / freeShippingThreshold) * 100
+  );
   const amountNeeded = (freeShippingThreshold - cartTotal).toFixed(2);
 
   const handleCheckout = () => {
-    showToast('Order placed successfully! Thank you for choosing Cravie.');
+    showToast("Order placed successfully! Thank you for choosing Cravie.");
     clearCart();
     setIsCartOpen(false);
   };
@@ -26,12 +39,13 @@ export const CartDrawer: React.FC = () => {
 
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
         <div className="w-screen max-w-md bg-[#fbf4ea] shadow-2xl flex flex-col justify-between border-l border-[#ebd8c5]">
-          
           {/* Header */}
           <div className="p-6 border-b border-[#ebd8c5] flex justify-between items-center bg-[#801818] text-white">
             <div className="flex items-center gap-2">
               <span className="text-xl">🎂</span>
-              <h2 className="font-display text-2xl font-extrabold">Your Order</h2>
+              <h2 className="font-display text-2xl font-extrabold">
+                Your Order
+              </h2>
             </div>
             <button
               onClick={() => setIsCartOpen(false)}
@@ -49,7 +63,11 @@ export const CartDrawer: React.FC = () => {
               </p>
             ) : (
               <p className="text-[#666666] mb-2 font-semibold">
-                Add <span className="font-bold text-[#801818]">${amountNeeded}</span> more for Free Express Delivery!
+                Add{" "}
+                <span className="font-bold text-[#801818]">
+                  ${amountNeeded}
+                </span>{" "}
+                more for Free Express Delivery!
               </p>
             )}
             <div className="w-full bg-[#ebd8c5] h-2 rounded-full overflow-hidden">
@@ -67,14 +85,16 @@ export const CartDrawer: React.FC = () => {
                 <div className="w-16 h-16 bg-[#fce8ea] text-[#801818] rounded-full flex items-center justify-center mx-auto text-3xl">
                   🍰
                 </div>
-                <p className="font-display text-xl font-extrabold text-[#222225]">Your cart is empty</p>
+                <p className="font-display text-xl font-extrabold text-[#222225]">
+                  Your cart is empty
+                </p>
                 <p className="text-xs text-[#666666]">
                   Looks like you haven't added any Cravie cheesecake slices yet!
                 </p>
                 <button
                   onClick={() => {
                     setIsCartOpen(false);
-                    navigateTo('collections');
+                    navigateTo("collections");
                   }}
                   className="bg-[#801818] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider shadow-md"
                 >
@@ -97,7 +117,8 @@ export const CartDrawer: React.FC = () => {
                       {item.product.name}
                     </h3>
                     <p className="text-[10px] text-[#666666]">
-                      {item.selectedFlavor || 'Strawberry Glaze'} {item.selectedSize ? `• ${item.selectedSize}` : ''}
+                      {item.selectedFlavor || "Strawberry Glaze"}{" "}
+                      {item.selectedSize ? `• ${item.selectedSize}` : ""}
                     </p>
                     <p className="font-extrabold text-[#801818] text-xs mt-1">
                       ${(item.product.price * item.quantity).toFixed(2)}
@@ -112,7 +133,9 @@ export const CartDrawer: React.FC = () => {
                         >
                           -
                         </button>
-                        <span className="px-2 font-bold text-xs">{item.quantity}</span>
+                        <span className="px-2 font-bold text-xs">
+                          {item.quantity}
+                        </span>
                         <button
                           onClick={() => updateQuantity(item.product.id, 1)}
                           className="px-2 py-0.5 font-bold text-xs text-[#801818]"
@@ -125,7 +148,9 @@ export const CartDrawer: React.FC = () => {
                         className="text-xs text-red-600 hover:text-red-800"
                         title="Remove item"
                       >
-                        <span className="material-symbols-outlined text-[16px]">delete</span>
+                        <span className="material-symbols-outlined text-[16px]">
+                          delete
+                        </span>
                       </button>
                     </div>
                   </div>
@@ -144,12 +169,17 @@ export const CartDrawer: React.FC = () => {
                 </div>
                 <div className="flex justify-between text-[#666666]">
                   <span>Estimated Delivery</span>
-                  <span>{cartTotal >= freeShippingThreshold ? 'FREE' : '$5.00'}</span>
+                  <span>
+                    {cartTotal >= freeShippingThreshold ? "FREE" : "$5.00"}
+                  </span>
                 </div>
                 <div className="flex justify-between text-sm font-extrabold text-[#222225] pt-2 border-t border-[#ebd8c5]">
                   <span>Total</span>
                   <span className="text-[#801818]">
-                    ${(cartTotal + (cartTotal >= freeShippingThreshold ? 0 : 5)).toFixed(2)}
+                    $
+                    {(
+                      cartTotal + (cartTotal >= freeShippingThreshold ? 0 : 5)
+                    ).toFixed(2)}
                   </span>
                 </div>
               </div>

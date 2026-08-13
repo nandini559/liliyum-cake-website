@@ -1,8 +1,9 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { Product, CartItem } from '../types';
-import { PRODUCTS } from '../data/products';
+import React, { createContext, useContext, useState, ReactNode } from "react";
+import { Product, CartItem } from "../types";
+import { PRODUCTS } from "../data/products";
 
-export type PageType = 'home' | 'collections' | 'product-detail' | 'order' | 'about';
+export type PageType =
+  "home" | "collections" | "product-detail" | "order" | "about";
 
 interface CartContextType {
   cart: CartItem[];
@@ -12,7 +13,13 @@ interface CartContextType {
   activePage: PageType;
   selectedProductId: string;
   toastMessage: string | null;
-  addToCart: (product: Product, quantity?: number, selectedFlavor?: string, selectedSize?: string, customMessage?: string) => void;
+  addToCart: (
+    product: Product,
+    quantity?: number,
+    selectedFlavor?: string,
+    selectedSize?: string,
+    customMessage?: string
+  ) => void;
   removeFromCart: (productId: string) => void;
   updateQuantity: (productId: string, delta: number) => void;
   clearCart: () => void;
@@ -27,20 +34,26 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const CartProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [cart, setCart] = useState<CartItem[]>([
     {
       product: PRODUCTS[0],
       quantity: 1,
-      selectedFlavor: 'Strawberry Glaze',
-      selectedSize: 'Single Slice'
-    }
+      selectedFlavor: "Strawberry Glaze",
+      selectedSize: "Single Slice",
+    },
   ]);
-  const [wishlist, setWishlist] = useState<string[]>(['eclair-raspberry', 'rose-pistachio-dream']);
+  const [wishlist, setWishlist] = useState<string[]>([
+    "eclair-raspberry",
+    "rose-pistachio-dream",
+  ]);
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
-  const [activePage, setActivePage] = useState<PageType>('home');
-  const [selectedProductId, setSelectedProductId] = useState<string>('eclair-raspberry');
+  const [activePage, setActivePage] = useState<PageType>("home");
+  const [selectedProductId, setSelectedProductId] =
+    useState<string>("eclair-raspberry");
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   const showToast = (msg: string) => {
@@ -59,7 +72,9 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   ) => {
     setCart((prev) => {
       const existingIndex = prev.findIndex(
-        (item) => item.product.id === product.id && item.selectedFlavor === selectedFlavor
+        (item) =>
+          item.product.id === product.id &&
+          item.selectedFlavor === selectedFlavor
       );
       if (existingIndex > -1) {
         const next = [...prev];
@@ -74,8 +89,8 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           quantity,
           selectedFlavor: selectedFlavor || product.flavors?.[0],
           selectedSize: selectedSize || product.sizes?.[0],
-          customMessage
-        }
+          customMessage,
+        },
       ];
     });
     showToast(`Added ${product.name} to your order!`);
@@ -86,16 +101,17 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   };
 
   const updateQuantity = (productId: string, delta: number) => {
-    setCart((prev) =>
-      prev
-        .map((item) => {
-          if (item.product.id === productId) {
-            const newQty = item.quantity + delta;
-            return newQty > 0 ? { ...item, quantity: newQty } : null;
-          }
-          return item;
-        })
-        .filter(Boolean) as CartItem[]
+    setCart(
+      (prev) =>
+        prev
+          .map((item) => {
+            if (item.product.id === productId) {
+              const newQty = item.quantity + delta;
+              return newQty > 0 ? { ...item, quantity: newQty } : null;
+            }
+            return item;
+          })
+          .filter(Boolean) as CartItem[]
     );
   };
 
@@ -105,10 +121,10 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setWishlist((prev) => {
       const exists = prev.includes(productId);
       if (exists) {
-        showToast('Removed from wishlist');
+        showToast("Removed from wishlist");
         return prev.filter((id) => id !== productId);
       } else {
-        showToast('Saved to wishlist');
+        showToast("Saved to wishlist");
         return [...prev, productId];
       }
     });
@@ -119,11 +135,14 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       setSelectedProductId(productId);
     }
     setActivePage(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
-  const cartTotal = cart.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
+  const cartTotal = cart.reduce(
+    (acc, item) => acc + item.product.price * item.quantity,
+    0
+  );
 
   return (
     <CartContext.Provider
@@ -145,7 +164,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         navigateTo,
         showToast,
         cartCount,
-        cartTotal
+        cartTotal,
       }}
     >
       {children}
@@ -156,7 +175,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
-    throw new Error('useCart must be used within a CartProvider');
+    throw new Error("useCart must be used within a CartProvider");
   }
   return context;
 };

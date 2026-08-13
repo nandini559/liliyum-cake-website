@@ -1,7 +1,12 @@
 export interface Product {
   id: string;
   name: string;
-  category: 'Celebration Cakes' | 'Luxury Indulgence' | 'Cheesecakes' | 'Belgian Chocolates' | 'Hampers';
+  category:
+    | "Celebration Cakes"
+    | "Luxury Indulgence"
+    | "Cheesecakes"
+    | "Belgian Chocolates"
+    | "Hampers";
   price: number;
   originalPrice?: number;
   rating: number;
@@ -31,7 +36,7 @@ export interface OrderDetails {
   customerName: string;
   email: string;
   phone: string;
-  deliveryType: 'delivery' | 'pickup';
+  deliveryType: "delivery" | "pickup";
   address?: string;
   city?: string;
   zipCode?: string;
@@ -39,5 +44,5 @@ export interface OrderDetails {
   deliveryTime: string;
   cakeMessage: string;
   specialInstructions: string;
-  paymentMethod: 'card' | 'upi' | 'cod';
+  paymentMethod: "card" | "upi" | "cod";
 }

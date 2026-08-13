@@ -1,18 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import { useCart } from '../context/CartContext';
-import { PRODUCTS } from '../data/products';
-import { Product } from '../types';
+import React, { useState, useEffect } from "react";
+import { useCart } from "../context/CartContext";
+import { PRODUCTS } from "../data/products";
+import { Product } from "../types";
 
 export const ProductDetailPage: React.FC = () => {
-  const { selectedProductId, navigateTo, addToCart, wishlist, toggleWishlist, setIsCartOpen } = useCart();
-  
-  const product: Product = PRODUCTS.find((p) => p.id === selectedProductId) || PRODUCTS[0];
+  const {
+    selectedProductId,
+    navigateTo,
+    addToCart,
+    wishlist,
+    toggleWishlist,
+    setIsCartOpen,
+  } = useCart();
+
+  const product: Product =
+    PRODUCTS.find((p) => p.id === selectedProductId) || PRODUCTS[0];
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const [selectedFlavor, setSelectedFlavor] = useState<string>('Strawberry Glaze');
-  const [selectedSize, setSelectedSize] = useState<string>('Single Slice');
+  const [selectedFlavor, setSelectedFlavor] =
+    useState<string>("Strawberry Glaze");
+  const [selectedSize, setSelectedSize] = useState<string>("Single Slice");
   const [quantity, setQuantity] = useState(1);
-  const [activeAccordion, setActiveAccordion] = useState<string | null>('ingredients');
+  const [activeAccordion, setActiveAccordion] = useState<string | null>(
+    "ingredients"
+  );
 
   useEffect(() => {
     setActiveImageIndex(0);
@@ -20,7 +31,10 @@ export const ProductDetailPage: React.FC = () => {
   }, [selectedProductId]);
 
   const isWishlisted = wishlist.includes(product.id);
-  const relatedProducts = PRODUCTS.filter((p) => p.id !== product.id).slice(0, 3);
+  const relatedProducts = PRODUCTS.filter((p) => p.id !== product.id).slice(
+    0,
+    3
+  );
 
   const handleAddToCart = () => {
     addToCart(product, quantity, selectedFlavor, selectedSize);
@@ -34,19 +48,35 @@ export const ProductDetailPage: React.FC = () => {
   return (
     <main className="w-full bg-[#fbf4ea] text-[#222225] pt-6 pb-16 font-sans">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12">
-        
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs font-bold text-[#666666] uppercase tracking-wider mb-6">
-          <a href="#" onClick={(e) => { e.preventDefault(); navigateTo('home'); }} className="hover:text-[#801818]">Home</a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateTo("home");
+            }}
+            className="hover:text-[#801818]"
+          >
+            Home
+          </a>
           <span>/</span>
-          <a href="#" onClick={(e) => { e.preventDefault(); navigateTo('collections'); }} className="hover:text-[#801818]">Shop</a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateTo("collections");
+            }}
+            className="hover:text-[#801818]"
+          >
+            Shop
+          </a>
           <span>/</span>
           <span className="text-[#801818]">{product.name}</span>
         </nav>
 
         {/* Bento Product Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
           {/* Left Image & Gallery (7 cols) */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             <div className="relative w-full h-[400px] md:h-[500px] bg-white rounded-3xl overflow-hidden shadow-md border border-[#ebd8c5] p-4 flex items-center justify-center">
@@ -61,10 +91,14 @@ export const ProductDetailPage: React.FC = () => {
               <button
                 onClick={() => toggleWishlist(product.id)}
                 className={`absolute top-6 right-6 p-2 rounded-full shadow-md transition-colors ${
-                  isWishlisted ? 'bg-[#801818] text-white' : 'bg-white text-[#801818] hover:bg-[#fce8ea]'
+                  isWishlisted
+                    ? "bg-[#801818] text-white"
+                    : "bg-white text-[#801818] hover:bg-[#fce8ea]"
                 }`}
               >
-                <span className="material-symbols-outlined text-xl">favorite</span>
+                <span className="material-symbols-outlined text-xl">
+                  favorite
+                </span>
               </button>
             </div>
 
@@ -76,11 +110,15 @@ export const ProductDetailPage: React.FC = () => {
                   onClick={() => setActiveImageIndex(idx)}
                   className={`h-24 rounded-2xl overflow-hidden border-2 transition-all shadow-sm ${
                     activeImageIndex === idx
-                      ? 'border-[#801818] scale-95 shadow-md'
-                      : 'border-[#ebd8c5] opacity-70 hover:opacity-100'
+                      ? "border-[#801818] scale-95 shadow-md"
+                      : "border-[#ebd8c5] opacity-70 hover:opacity-100"
                   }`}
                 >
-                  <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
+                  <img
+                    src={img}
+                    alt={`Thumbnail ${idx + 1}`}
+                    className="w-full h-full object-cover"
+                  />
                 </button>
               ))}
             </div>
@@ -90,22 +128,34 @@ export const ProductDetailPage: React.FC = () => {
               <div className="flex items-center gap-3">
                 <span className="text-2xl">🧀</span>
                 <div>
-                  <h4 className="font-extrabold text-xs text-[#801818]">100% Cream Cheese</h4>
-                  <p className="text-[10px] text-[#666666]">Pure natural dairy cream cheese.</p>
+                  <h4 className="font-extrabold text-xs text-[#801818]">
+                    100% Cream Cheese
+                  </h4>
+                  <p className="text-[10px] text-[#666666]">
+                    Pure natural dairy cream cheese.
+                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-2xl">🍰</span>
                 <div>
-                  <h4 className="font-extrabold text-xs text-[#801818]">Freshly Baked Daily</h4>
-                  <p className="text-[10px] text-[#666666]">Artisanal baking every morning.</p>
+                  <h4 className="font-extrabold text-xs text-[#801818]">
+                    Freshly Baked Daily
+                  </h4>
+                  <p className="text-[10px] text-[#666666]">
+                    Artisanal baking every morning.
+                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-2xl">🚚</span>
                 <div>
-                  <h4 className="font-extrabold text-xs text-[#801818]">Express Delivery</h4>
-                  <p className="text-[10px] text-[#666666]">Temperature-controlled box.</p>
+                  <h4 className="font-extrabold text-xs text-[#801818]">
+                    Express Delivery
+                  </h4>
+                  <p className="text-[10px] text-[#666666]">
+                    Temperature-controlled box.
+                  </p>
                 </div>
               </div>
             </div>
@@ -143,14 +193,19 @@ export const ProductDetailPage: React.FC = () => {
                 Select Flavor:
               </label>
               <div className="grid grid-cols-2 gap-2">
-                {['Strawberry Glaze', 'Matcha Velvet', 'Dark Chocolate', 'Lemon Zest'].map((flavor) => (
+                {[
+                  "Strawberry Glaze",
+                  "Matcha Velvet",
+                  "Dark Chocolate",
+                  "Lemon Zest",
+                ].map((flavor) => (
                   <button
                     key={flavor}
                     onClick={() => setSelectedFlavor(flavor)}
                     className={`py-2 px-3 rounded-xl text-xs font-bold border-2 transition-all ${
                       selectedFlavor === flavor
-                        ? 'border-[#801818] bg-[#fce8ea] text-[#801818]'
-                        : 'border-[#ebd8c5] text-[#444] hover:border-[#801818]'
+                        ? "border-[#801818] bg-[#fce8ea] text-[#801818]"
+                        : "border-[#ebd8c5] text-[#444] hover:border-[#801818]"
                     }`}
                   >
                     {flavor}
@@ -165,26 +220,30 @@ export const ProductDetailPage: React.FC = () => {
                 Select Portion:
               </label>
               <div className="flex gap-2">
-                {['Single Slice', 'Half Cake (4)', 'Whole Cake (8)'].map((size) => (
-                  <button
-                    key={size}
-                    onClick={() => setSelectedSize(size)}
-                    className={`py-2 px-3 rounded-xl text-xs font-bold border-2 transition-all ${
-                      selectedSize === size
-                        ? 'border-[#801818] bg-[#801818] text-white'
-                        : 'border-[#ebd8c5] text-[#444] hover:border-[#801818]'
-                    }`}
-                  >
-                    {size}
-                  </button>
-                ))}
+                {["Single Slice", "Half Cake (4)", "Whole Cake (8)"].map(
+                  (size) => (
+                    <button
+                      key={size}
+                      onClick={() => setSelectedSize(size)}
+                      className={`py-2 px-3 rounded-xl text-xs font-bold border-2 transition-all ${
+                        selectedSize === size
+                          ? "border-[#801818] bg-[#801818] text-white"
+                          : "border-[#ebd8c5] text-[#444] hover:border-[#801818]"
+                      }`}
+                    >
+                      {size}
+                    </button>
+                  )
+                )}
               </div>
             </div>
 
             {/* Stepper & Buttons */}
             <div className="space-y-4 pt-2">
               <div className="flex items-center gap-4">
-                <span className="text-xs font-extrabold uppercase text-[#222225]">Quantity:</span>
+                <span className="text-xs font-extrabold uppercase text-[#222225]">
+                  Quantity:
+                </span>
                 <div className="flex items-center border border-[#ebd8c5] rounded-xl overflow-hidden bg-[#fbf4ea]">
                   <button
                     onClick={() => setQuantity((q) => Math.max(1, q - 1))}
@@ -222,23 +281,28 @@ export const ProductDetailPage: React.FC = () => {
             <div className="border-t border-[#ebd8c5] pt-4 space-y-2">
               <div className="border border-[#ebd8c5] rounded-2xl overflow-hidden">
                 <button
-                  onClick={() => setActiveAccordion(activeAccordion === 'ingredients' ? null : 'ingredients')}
+                  onClick={() =>
+                    setActiveAccordion(
+                      activeAccordion === "ingredients" ? null : "ingredients"
+                    )
+                  }
                   className="w-full p-3 flex justify-between items-center bg-[#fbf4ea] font-extrabold text-xs text-[#801818]"
                 >
                   <span>Ingredients & Allergens</span>
-                  <span>{activeAccordion === 'ingredients' ? '-' : '+'}</span>
+                  <span>{activeAccordion === "ingredients" ? "-" : "+"}</span>
                 </button>
-                {activeAccordion === 'ingredients' && (
+                {activeAccordion === "ingredients" && (
                   <div className="p-3 text-[11px] text-[#666666] bg-white space-y-1">
                     <p>• Premium Spanish Cream Cheese</p>
                     <p>• Fresh Organic Strawberry Puree & Glaze</p>
                     <p>• Butter Graham Cracker Crust</p>
-                    <p className="text-[#801818] font-bold mt-1">Allergens: Milk, Wheat, Eggs</p>
+                    <p className="text-[#801818] font-bold mt-1">
+                      Allergens: Milk, Wheat, Eggs
+                    </p>
                   </div>
                 )}
               </div>
             </div>
-
           </div>
         </div>
 
@@ -251,7 +315,7 @@ export const ProductDetailPage: React.FC = () => {
             {relatedProducts.map((rel) => (
               <div
                 key={rel.id}
-                onClick={() => navigateTo('product-detail', rel.id)}
+                onClick={() => navigateTo("product-detail", rel.id)}
                 className="bg-white rounded-3xl p-4 shadow-sm border border-[#ebd8c5] cursor-pointer hover:shadow-md transition-all group"
               >
                 <div className="aspect-square rounded-2xl overflow-hidden mb-3">
@@ -264,12 +328,13 @@ export const ProductDetailPage: React.FC = () => {
                 <h4 className="font-display font-extrabold text-sm text-[#222225] mb-1">
                   {rel.name}
                 </h4>
-                <p className="font-extrabold text-xs text-[#801818]">${rel.price}</p>
+                <p className="font-extrabold text-xs text-[#801818]">
+                  ${rel.price}
+                </p>
               </div>
             ))}
           </div>
         </div>
-
       </div>
     </main>
   );

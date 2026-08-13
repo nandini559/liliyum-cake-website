@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
-import { useCart } from '../context/CartContext';
-import { PRODUCTS } from '../data/products';
+import React, { useState } from "react";
+import { useCart } from "../context/CartContext";
+import { PRODUCTS } from "../data/products";
 
 export const SearchModal: React.FC = () => {
   const { isSearchOpen, setIsSearchOpen, navigateTo } = useCart();
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   if (!isSearchOpen) return null;
 
-  const filteredProducts = PRODUCTS.filter((p) =>
-    p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    p.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    p.description.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredProducts = PRODUCTS.filter(
+    (p) =>
+      p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      p.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      p.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -45,11 +46,19 @@ export const SearchModal: React.FC = () => {
 
         {/* Search Results */}
         <div className="max-h-96 overflow-y-auto p-4 divide-y divide-[#ebd8c5]">
-          {searchTerm.trim() === '' ? (
+          {searchTerm.trim() === "" ? (
             <div className="p-6 text-center text-[#666666]">
-              <p className="font-bold text-xs text-[#801818] uppercase tracking-wider mb-2">Popular Searches:</p>
+              <p className="font-bold text-xs text-[#801818] uppercase tracking-wider mb-2">
+                Popular Searches:
+              </p>
               <div className="flex flex-wrap justify-center gap-2 mt-2">
-                {['Matcha', 'Strawberry', 'Chocolate', 'Lemon', 'Cheesecake'].map((tag) => (
+                {[
+                  "Matcha",
+                  "Strawberry",
+                  "Chocolate",
+                  "Lemon",
+                  "Cheesecake",
+                ].map((tag) => (
                   <button
                     key={tag}
                     onClick={() => setSearchTerm(tag)}
@@ -69,7 +78,7 @@ export const SearchModal: React.FC = () => {
               <div
                 key={product.id}
                 onClick={() => {
-                  navigateTo('product-detail', product.id);
+                  navigateTo("product-detail", product.id);
                   setIsSearchOpen(false);
                 }}
                 className="flex items-center gap-4 p-3 hover:bg-white rounded-2xl cursor-pointer transition-colors"
@@ -83,9 +92,13 @@ export const SearchModal: React.FC = () => {
                   <h4 className="font-display font-extrabold text-sm text-[#222225]">
                     {product.name}
                   </h4>
-                  <p className="text-[10px] text-[#666666]">{product.category}</p>
+                  <p className="text-[10px] text-[#666666]">
+                    {product.category}
+                  </p>
                 </div>
-                <span className="font-extrabold text-[#801818] text-xs">${product.price}</span>
+                <span className="font-extrabold text-[#801818] text-xs">
+                  ${product.price}
+                </span>
               </div>
             ))
           )}
