@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useCart } from "../context/CartContext";
 import { PRODUCTS } from "../data/products";
 
 export const HomePage: React.FC = () => {
   const { navigateTo, addToCart, setIsCartOpen, showToast } = useCart();
   const [newsletterEmail, setNewsletterEmail] = useState("");
-
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (newsletterEmail) {
@@ -14,28 +13,83 @@ export const HomePage: React.FC = () => {
     }
   };
 
+
+
+
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollCarousel = (direction: "left" | "right") => {
+    const carousel = carouselRef.current;
+
+    if (!carousel) return;
+
+    const scrollAmount = 350;
+
+    if (direction === "right") {
+      // If near the end, jump back to the beginning
+      if (
+        carousel.scrollLeft + carousel.clientWidth >=
+        carousel.scrollWidth - 10
+      ) {
+        carousel.scrollTo({
+          left: 0,
+          behavior: "smooth",
+        });
+      } else {
+        carousel.scrollBy({
+          left: scrollAmount,
+          behavior: "smooth",
+        });
+      }
+    }
+
+    if (direction === "left") {
+      // If at the beginning, go to the end
+      if (carousel.scrollLeft <= 10) {
+        carousel.scrollTo({
+          left: carousel.scrollWidth,
+          behavior: "smooth",
+        });
+      } else {
+        carousel.scrollBy({
+          left: -scrollAmount,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
+
   return (
     <main className="w-full font-sans bg-[#fbf4ea] text-[#222225] overflow-hidden">
-      {/* 1. HERO SPLIT OFFER SECTION */}
-      <section className="max-w-[1280px] mx-auto px-4 md:px-12 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-          {/* Left Deep Red Hero Card */}
-          <div className="lg:col-span-6 bg-[#801818] text-white p-8 md:p-12 rounded-3xl flex flex-col justify-between space-y-6 shadow-lg">
-            <div className="space-y-4">
-              <span className="bg-[#e08b26] text-white text-[10px] font-extrabold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm inline-block">
-                ★ FRESHLY BAKED DAILY ★
-              </span>
-              <h1 className="font-display text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
-                HEY, YOUR CHEESECAKE IS ALMOST READY!
+      {/* 1. HERO  SECTION */}
+      <section className="max-w-[1280px] mx-auto px-2 md:px-4 py-4">
+        <div className="relative min-h-[500px] md:min-h-[550px] rounded-3xl overflow-hidden shadow-lg">
+          {/* Background Image */}
+          <img
+            src="https://liliyum.com/cdn/shop/files/Newyork-Cheese-Cake-1_720x.jpg?v=1613720945"
+            alt="Cheesecake slices with berries"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
+          {/* Dark Overlay for better text visibility */}
+          <div className="absolute inset-0 bg-[#801818]/40" />
+
+          {/* Content */}
+          {/* Content */}
+          <div className="relative z-10 min-h-[500px] md:min-h-[550px] px-6 md:px-16 flex items-center justify-center text-center text-white">
+            <div className="w-full max-w-5xl space-y-6">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+                CAKES CRAFTED WITH PASSION & PANACHE
               </h1>
-              <p className="text-xs sm:text-sm text-[#f5d5d8] leading-relaxed max-w-md">
-                A rich and creamy cheesecake made with smooth cream cheese, set
-                on a crunchy biscuit crust and topped with fresh strawberries
-                and sweet strawberry glaze.
+
+              <p className="mx-auto text-sm sm:text-base md:text-md text-[#fff4f4] leading-relaxed max-w-3xl">
+                Bangalore's artisanal patisserie for celebration cakes, Belgian chocolates &
+                desserts — baked fresh, delivered the same day
               </p>
-            </div>
-            <div>
+
               <button
+                type="button"
                 onClick={() => {
                   addToCart(PRODUCTS[0]);
                   setIsCartOpen(true);
@@ -46,187 +100,211 @@ export const HomePage: React.FC = () => {
               </button>
             </div>
           </div>
-
-          {/* Right Photographic Banner Image */}
-          <div className="lg:col-span-6 rounded-3xl overflow-hidden shadow-lg h-[350px] lg:h-auto">
-            <img
-              src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=1000&q=80"
-              alt="Cheesecake slices with berries"
-              className="w-full h-full object-cover"
-            />
-          </div>
         </div>
       </section>
 
-      {/* 2. TICKER BAR */}
-      <div className="bg-[#801818] text-white text-[11px] font-bold py-2.5 px-4 uppercase tracking-widest text-center">
-        • FRESHLY BAKED EVERYDAY • DREAMY, FRESH & DELICIOUS • MADE TO SWEETEN
-        YOUR DAY • BRINGING YOU THE BEST CHEESECAKE
-      </div>
+
 
       {/* 3. ASSORTMENT SECTION */}
       <section className="max-w-[1280px] mx-auto px-4 md:px-12 py-16 text-center">
         <h2 className="font-display text-3xl md:text-5xl font-extrabold text-[#801818] mb-8 uppercase tracking-tight">
-          ASSORTMENT
+          SHOP BY OCCATIONS
         </h2>
 
         {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <button
+            type="button"
             onClick={() => navigateTo("collections")}
             className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer group p-3 border border-[#ebd8c5]"
           >
-            <div className="h-48 rounded-2xl overflow-hidden mb-3">
-              <img
-                src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=500&q=80"
-                alt="Cheese Cakes"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+            <div className="h-64 md:h-72 rounded-2xl overflow-hidden mb-4">              <img
+              src="https://liliyum.com/cdn/shop/files/wifesbirthdaycake_540x.jpg?v=1684321259"
+              alt="Celebration Cakes"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
             </div>
-            <div className="py-2 font-display font-extrabold text-sm text-[#222225]">
-              Cheese Cakes
+            <div className="py-2 font-display font-extrabold text-2xl text-[#222225]">
+              Celebration Cakes
             </div>
-          </div>
+          </button>
 
-          <div
+          <button
+            type="button"
             onClick={() => navigateTo("collections")}
             className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer group p-3 border border-[#ebd8c5]"
           >
-            <div className="h-48 rounded-2xl overflow-hidden mb-3">
-              <img
-                src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&q=80"
-                alt="Wedding Cakes"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+            <div className="h-64 md:h-72 rounded-2xl overflow-hidden mb-4">              <img
+              src="https://liliyum.com/cdn/shop/products/FloralCakeWithMacarons_540x.jpg?v=1679312807"
+              alt="Wedding Cakes"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
             </div>
-            <div className="py-2 font-display font-extrabold text-sm text-[#222225]">
+            <div className="py-2 font-display font-extrabold text-2xl text-[#222225]">
               Wedding Cakes
             </div>
-          </div>
+          </button>
 
-          <div
+          <button
+            type="button"
             onClick={() => navigateTo("collections")}
             className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer group p-3 border border-[#ebd8c5]"
           >
-            <div className="h-48 rounded-2xl overflow-hidden mb-3">
-              <img
-                src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=500&q=80"
-                alt="Cup Cakes"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+            <div className="h-64 md:h-72 rounded-2xl overflow-hidden mb-4">              <img
+              src="https://liliyum.com/cdn/shop/products/blueombrecake_540x.jpg?v=1638533280"
+              alt="Birthday Cakess"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
             </div>
-            <div className="py-2 font-display font-extrabold text-sm text-[#222225]">
-              Cup Cakes
+            <div className="py-2 font-display font-extrabold text-2xl text-[#222225]">
+              Birthday Cakes
             </div>
-          </div>
+          </button>
 
-          <div
+          <button
+            type="button"
             onClick={() => navigateTo("collections")}
             className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer group p-3 border border-[#ebd8c5]"
           >
-            <div className="h-48 rounded-2xl overflow-hidden mb-3">
-              <img
-                src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&q=80"
-                alt="Brownies"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+            <div className="h-64 md:h-72 rounded-2xl overflow-hidden mb-4">              <img
+              src="https://liliyum.com/cdn/shop/files/CascadingButterflyCake_540x.jpg?v=1702617471"
+              alt="Festive Cakes"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
             </div>
-            <div className="py-2 font-display font-extrabold text-sm text-[#222225]">
-              Brownies
+            <div className="py-2 font-display font-extrabold text-2xl text-[#222225]">
+              Festive Cakes
             </div>
-          </div>
+          </button>
         </div>
 
-        {/* Pagination Dots */}
-        <div className="flex justify-center items-center gap-2 mt-8">
-          <span className="w-2 h-2 rounded-full bg-[#ebd8c5]"></span>
-          <span className="w-2.5 h-2.5 rounded-full bg-[#801818]"></span>
-          <span className="w-2 h-2 rounded-full bg-[#ebd8c5]"></span>
-          <span className="w-2 h-2 rounded-full bg-[#ebd8c5]"></span>
-        </div>
+
+
       </section>
 
       {/* 4. BEST SERVICES */}
       <section className="bg-white py-16 border-y border-[#ebd8c5]">
-        <div className="max-w-[1280px] mx-auto px-4 md:px-12 text-center">
-          <h2 className="font-display text-3xl md:text-5xl font-extrabold text-[#801818] mb-2 uppercase tracking-tight">
-            BEST SERVICES
-          </h2>
-          <p className="text-xs text-[#666666] max-w-lg mx-auto mb-10">
-            Every slice is prepared with love and premium natural ingredients.
-          </p>
+        <div className="max-w-[1280px] mx-auto px-4 md:px-12">
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center max-w-5xl mx-auto">
-            <div className="space-y-6">
-              <div className="bg-[#fce8ea] p-5 rounded-2xl border border-[#f3c0c5] text-left flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#801818] text-white flex items-center justify-center text-lg shrink-0">
-                  🎨
-                </div>
-                <div>
-                  <h4 className="font-extrabold text-sm text-[#801818]">
-                    Customize Cakes
-                  </h4>
-                  <p className="text-[11px] text-[#666666]">
-                    Crafted tailored for your special moments.
-                  </p>
-                </div>
-              </div>
+          {/* Heading */}
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <h2 className="font-display text-3xl md:text-5xl font-extrabold text-[#801818] uppercase tracking-tight ">
+                BEST SELLERS
+              </h2>
 
-              <div className="bg-[#fce8ea] p-5 rounded-2xl border border-[#f3c0c5] text-left flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#801818] text-white flex items-center justify-center text-lg shrink-0">
-                  🚚
-                </div>
-                <div>
-                  <h4 className="font-extrabold text-sm text-[#801818]">
-                    Free Shipping
-                  </h4>
-                  <p className="text-[11px] text-[#666666]">
-                    Delivered in temperature-controlled boxes.
-                  </p>
-                </div>
-              </div>
+              <p className="text-xs text-[#666666] max-w-lg mt-2">
+                Our most loved cakes and desserts, baked fresh for every celebration.
+              </p>
             </div>
 
-            <div className="flex justify-center">
-              <div className="w-64 h-80 rounded-3xl overflow-hidden shadow-lg border-4 border-[#fce8ea]">
-                <img
-                  src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=600&q=80"
-                  alt="Floral Cake"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+            {/* Navigation Buttons */}
+            <div className="hidden sm:flex gap-3">
+              <button
+                type="button"
+                onClick={() => scrollCarousel("left")}
+                className="w-10 h-10 rounded-full border border-[#ebd8c5] text-[#801818] hover:bg-[#801818] hover:text-white transition-all flex items-center justify-center"
+                aria-label="Previous products"
+              >
+                ←
+              </button>
 
-            <div className="space-y-6">
-              <div className="bg-[#fce8ea] p-5 rounded-2xl border border-[#f3c0c5] text-left flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#801818] text-white flex items-center justify-center text-lg shrink-0">
-                  ✨
-                </div>
-                <div>
-                  <h4 className="font-extrabold text-sm text-[#801818]">
-                    New Design
-                  </h4>
-                  <p className="text-[11px] text-[#666666]">
-                    Contemporary artisanal aesthetics.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-[#fce8ea] p-5 rounded-2xl border border-[#f3c0c5] text-left flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#801818] text-white flex items-center justify-center text-lg shrink-0">
-                  👑
-                </div>
-                <div>
-                  <h4 className="font-extrabold text-sm text-[#801818]">
-                    High Quality Service
-                  </h4>
-                  <p className="text-[11px] text-[#666666]">
-                    Satisfaction guaranteed in every slice.
-                  </p>
-                </div>
-              </div>
+              <button
+                type="button"
+                onClick={() => scrollCarousel("right")}
+                className="w-10 h-10 rounded-full bg-[#801818] text-white hover:bg-[#661212] transition-all flex items-center justify-center"
+                aria-label="Next products"
+              >
+                →
+              </button>
             </div>
           </div>
+
+          {/* Carousel */}
+          <div
+            ref={carouselRef}
+            id="bestseller-carousel"
+            className="flex gap-6 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory scrollbar-hide"
+          >
+            {[...PRODUCTS.slice(0, 6), ...PRODUCTS.slice(0, 6)].map(
+              (product, index) => (
+                <div
+                  key={`${product.id}-${index}`} className="min-w-[280px] sm:min-w-[300px] md:min-w-[320px] bg-[#fffaf5] rounded-3xl overflow-hidden border border-[#ebd8c5] group snap-start"
+                >
+                  {/* Product Image */}
+                  <button
+                    type="button"
+                    onClick={() =>
+                      navigateTo("product-detail", product.id)
+                    }
+                    className="relative w-full h-72 overflow-hidden"
+                  >
+                    <img
+                      src={product.images[0]}
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+
+                    {/* Bestseller Badge */}
+                    <span className="absolute top-4 left-4 bg-[#801818] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
+                      Bestseller
+                    </span>
+                  </button>
+
+                  {/* Product Details */}
+                  <div className="p-5">
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <h3 className="font-display font-extrabold text-lg text-[#222225]">
+                          {product.name}
+                        </h3>
+
+                        <p className="text-xs text-[#777] mt-1 line-clamp-2">
+                          {product.description}
+                        </p>
+                      </div>
+
+                      <span className="font-extrabold text-[#801818] whitespace-nowrap">
+                        ₹{product.price}
+                      </span>
+                    </div>
+
+                    <div className="flex gap-3 mt-5">
+                      <button
+                        type="button"
+                        onClick={() => addToCart(product)}
+                        className="flex-1 bg-[#801818] hover:bg-[#661212] text-white py-3 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all"
+                      >
+                        Add to Cart
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() =>
+                          navigateTo("product-detail", product.id)
+                        }
+                        className="px-4 py-3 rounded-full border border-[#801818] text-[#801818] hover:bg-[#fce8ea] transition-all text-[11px] font-bold"
+                      >
+                        View
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+
+          {/* View All */}
+          <div className="flex justify-center mt-8">
+            <button
+              type="button"
+              onClick={() => navigateTo("collections")}
+              className="border-2 border-[#801818] text-[#801818] hover:bg-[#801818] hover:text-white px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all"
+            >
+              View All Cakes
+            </button>
+          </div>
+
+
         </div>
       </section>
 

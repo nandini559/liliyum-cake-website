@@ -1,6 +1,11 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
-import { Product, CartItem } from "../types";
-import { PRODUCTS } from "../data/products";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useMemo,
+} from "react"; import { Product, CartItem } from "../types";
+// import { PRODUCTS } from "../data/products";
 
 export type PageType =
   "home" | "collections" | "product-detail" | "order" | "about";
@@ -38,12 +43,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [cart, setCart] = useState<CartItem[]>([
-    {
-      product: PRODUCTS[0],
-      quantity: 1,
-      selectedFlavor: "Strawberry Glaze",
-      selectedSize: "Single Slice",
-    },
+
   ]);
   const [wishlist, setWishlist] = useState<string[]>([
     "eclair-raspberry",
@@ -144,29 +144,45 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     0
   );
 
+
+  const contextValue = useMemo(
+    () => ({
+      cart,
+      wishlist,
+      isCartOpen,
+      isSearchOpen,
+      activePage,
+      selectedProductId,
+      toastMessage,
+      addToCart,
+      removeFromCart,
+      updateQuantity,
+      clearCart,
+      toggleWishlist,
+      setIsCartOpen,
+      setIsSearchOpen,
+      navigateTo,
+      showToast,
+      cartCount,
+      cartTotal,
+    }),
+    [
+      cart,
+      wishlist,
+      isCartOpen,
+      isSearchOpen,
+      activePage,
+      selectedProductId,
+      toastMessage,
+      cartCount,
+      cartTotal,
+    ]
+  );
+
   return (
     <CartContext.Provider
-      value={{
-        cart,
-        wishlist,
-        isCartOpen,
-        isSearchOpen,
-        activePage,
-        selectedProductId,
-        toastMessage,
-        addToCart,
-        removeFromCart,
-        updateQuantity,
-        clearCart,
-        toggleWishlist,
-        setIsCartOpen,
-        setIsSearchOpen,
-        navigateTo,
-        showToast,
-        cartCount,
-        cartTotal,
-      }}
-    >
+      value={contextValue}>
+
       {children}
     </CartContext.Provider>
   );
