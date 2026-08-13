@@ -29,23 +29,20 @@ export const Navbar: React.FC = () => {
         <div className="flex justify-between items-center w-full px-6 md:px-12 py-3.5 max-w-[1280px] mx-auto">
           {/* Left Navigation Links */}
           <div className="hidden md:flex items-center space-x-6 text-xs font-bold uppercase tracking-wider text-[#222225]">
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                navigateTo("home");
-              }}
-              className={`transition-colors hover:text-[#801818] ${
-                activePage === "home"
-                  ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
-                  : ""
-              }`}
-            >
-              HOME
-            </a>
+           <button
+  type="button"
+  onClick={() => navigateTo("home")}
+  className={`transition-colors hover:text-[#801818] ${
+    activePage === "home"
+      ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
+      : ""
+  }`}
+>
+  HOME
+</button>
 
-            <a
-              href="#"
+           <button
+  type="button"
               onClick={(e) => {
                 e.preventDefault();
                 navigateTo("collections");
@@ -57,25 +54,25 @@ export const Navbar: React.FC = () => {
               }`}
             >
               COLLECTIONS
-            </a>
+            </button>
 
-            <a
-              href="#"
+            <button
+  type="button"
               onClick={(e) => {
                 e.preventDefault();
                 navigateTo("order");
               }}
               className={`transition-colors hover:text-[#801818] ${
-                activePage === "order"
+                activePage === "collections"
                   ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
                   : ""
               }`}
             >
-              ORDER CAKE
-            </a>
+              Order Cake
+            </button>
 
-            <a
-              href="#"
+            <button
+              type="button"
               onClick={(e) => {
                 e.preventDefault();
                 navigateTo("about");
@@ -87,12 +84,12 @@ export const Navbar: React.FC = () => {
               }`}
             >
               OUR STORY
-            </a>
+            </button>
           </div>
 
           {/* Center Logo */}
-          <a
-            href="#"
+          <button
+            type="button"
             onClick={(e) => {
               e.preventDefault();
               navigateTo("home");
@@ -104,12 +101,13 @@ export const Navbar: React.FC = () => {
                 Cravie
               </span>
             </div>
-          </a>
+          </button>
 
           {/* Right Navigation & Action Icons */}
           <div className="flex items-center space-x-4 text-xs font-bold uppercase tracking-wider text-[#222225]">
             {/* Search */}
             <button
+            type="button"
               aria-label="Search"
               onClick={() => setIsSearchOpen(true)}
               className="text-[#222225] p-1.5 hover:bg-[#fce8ea] rounded-full transition-colors"
@@ -122,6 +120,7 @@ export const Navbar: React.FC = () => {
 
             {/* Cart */}
             <button
+            type="button"
               aria-label="Cart"
               onClick={() => setIsCartOpen(true)}
               className="text-[#222225] p-1.5 hover:bg-[#fce8ea] rounded-full transition-colors relative"
@@ -140,6 +139,7 @@ export const Navbar: React.FC = () => {
 
             {/* Order Now CTA */}
             <button
+              type="button"
               onClick={() => navigateTo("order")}
               className="hidden md:inline-block bg-[#801818] hover:bg-[#661212] text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm transition-all"
             >
@@ -148,6 +148,7 @@ export const Navbar: React.FC = () => {
 
             {/* Mobile Hamburger */}
             <button
+              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden text-[#222225] p-1"
             >
@@ -161,8 +162,8 @@ export const Navbar: React.FC = () => {
         {/* Mobile Menu Drawer */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-[#fbf4ea] border-t border-[#ebd8c5] px-6 py-4 space-y-3 font-bold text-xs uppercase tracking-wider">
-            <a
-              href="#"
+            <button
+              type="button"
               onClick={(e) => {
                 e.preventDefault();
                 navigateTo("home");
@@ -171,10 +172,10 @@ export const Navbar: React.FC = () => {
               className="block py-2 text-[#801818]"
             >
               Home
-            </a>
+            </button>
 
-            <a
-              href="#"
+            <button
+              type="button"
               onClick={(e) => {
                 e.preventDefault();
                 navigateTo("collections");
@@ -183,10 +184,10 @@ export const Navbar: React.FC = () => {
               className="block py-2 text-[#222225]"
             >
               Browse Collections
-            </a>
+            </button>
 
-            <a
-              href="#"
+            <button
+              type="button"
               onClick={(e) => {
                 e.preventDefault();
                 navigateTo("order");
@@ -195,10 +196,10 @@ export const Navbar: React.FC = () => {
               className="block py-2 text-[#222225]"
             >
               Order / Customize Cake
-            </a>
+            </button>
 
-            <a
-              href="#"
+           <button
+              type="button"
               onClick={(e) => {
                 e.preventDefault();
                 navigateTo("about");
@@ -207,7 +208,7 @@ export const Navbar: React.FC = () => {
               className="block py-2 text-[#222225]"
             >
               Our Story
-            </a>
+            </button>
           </div>
         )}
       </nav>
