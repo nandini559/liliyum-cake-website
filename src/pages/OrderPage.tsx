@@ -41,8 +41,8 @@ export const OrderPage: React.FC = () => {
     cartTotal > 0
       ? cartTotal + deliveryFee + taxAmount
       : selectedProduct.price * quantity +
-        deliveryFee +
-        selectedProduct.price * quantity * 0.08;
+      deliveryFee +
+      selectedProduct.price * quantity * 0.08;
 
   const handleSubmitOrder = (e: React.FormEvent) => {
     e.preventDefault();
@@ -125,13 +125,11 @@ export const OrderPage: React.FC = () => {
       <div className="max-w-[1280px] mx-auto px-6 md:px-12">
         {/* Page Header */}
         <div className="text-center mb-10">
-          <span className="bg-[#801818] text-white text-[10px] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest inline-block mb-2 shadow-sm">
-            ★ EASY ONLINE ORDERING ★
-          </span>
+
           <h1 className="font-display text-3xl md:text-5xl font-extrabold text-[#801818] uppercase tracking-tight">
-            Order Your Custom Cheesecake
+            Order Your Cakes
           </h1>
-          <p className="text-xs text-[#666666] max-w-lg mx-auto mt-2">
+          <p className="text-xs text-[#666666]  mx-auto mt-2">
             Select your preferred flavor, size, custom message, and delivery
             slot. Freshly baked and delivered to your doorstep.
           </p>
@@ -152,18 +150,17 @@ export const OrderPage: React.FC = () => {
               {/* Selected Product Picker */}
               <div>
                 <label className="text-xs font-extrabold uppercase text-[#222225] block mb-2">
-                  Select Cheesecake:
+                  Select Varients:
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {PRODUCTS.slice(0, 4).map((item) => (
                     <div
                       key={item.id}
                       onClick={() => setSelectedProduct(item)}
-                      className={`p-2.5 rounded-2xl border-2 cursor-pointer transition-all text-center ${
-                        selectedProduct.id === item.id
-                          ? "border-[#801818] bg-[#fce8ea]"
-                          : "border-[#ebd8c5] hover:border-[#801818]"
-                      }`}
+                      className={`p-2.5 rounded-2xl border-2 cursor-pointer transition-all text-center ${selectedProduct.id === item.id
+                        ? "border-[#801818] bg-[#fce8ea]"
+                        : "border-[#ebd8c5] hover:border-[#801818]"
+                        }`}
                     >
                       <img
                         src={item.images[0]}
@@ -174,7 +171,7 @@ export const OrderPage: React.FC = () => {
                         {item.name}
                       </p>
                       <p className="text-[10px] font-bold text-[#801818]">
-                        ${item.price}
+                        ₹ {item.price}
                       </p>
                     </div>
                   ))}
@@ -197,11 +194,10 @@ export const OrderPage: React.FC = () => {
                       type="button"
                       key={flv}
                       onClick={() => setFlavor(flv)}
-                      className={`py-2 px-3 rounded-xl text-xs font-bold border-2 transition-all ${
-                        flavor === flv
-                          ? "border-[#801818] bg-[#801818] text-white"
-                          : "border-[#ebd8c5] text-[#444] hover:border-[#801818]"
-                      }`}
+                      className={`py-2 px-3 rounded-xl text-xs font-bold border-2 transition-all ${flavor === flv
+                        ? "border-[#801818] bg-[#801818] text-white"
+                        : "border-[#ebd8c5] text-[#444] hover:border-[#801818]"
+                        }`}
                     >
                       {flv}
                     </button>
@@ -221,11 +217,10 @@ export const OrderPage: React.FC = () => {
                         type="button"
                         key={sz}
                         onClick={() => setSize(sz)}
-                        className={`py-2 px-4 rounded-xl text-xs font-bold border-2 transition-all ${
-                          size === sz
-                            ? "border-[#801818] bg-[#801818] text-white"
-                            : "border-[#ebd8c5] text-[#444] hover:border-[#801818]"
-                        }`}
+                        className={`py-2 px-4 rounded-xl text-xs font-bold border-2 transition-all ${size === sz
+                          ? "border-[#801818] bg-[#801818] text-white"
+                          : "border-[#ebd8c5] text-[#444] hover:border-[#801818]"
+                          }`}
                       >
                         {sz}
                       </button>
@@ -264,22 +259,20 @@ export const OrderPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setDeliveryType("delivery")}
-                  className={`flex-1 py-3 rounded-2xl text-xs font-bold uppercase tracking-wider border-2 flex items-center justify-center gap-2 transition-all ${
-                    deliveryType === "delivery"
-                      ? "border-[#801818] bg-[#801818] text-white shadow-sm"
-                      : "border-[#ebd8c5] text-[#444] hover:border-[#801818]"
-                  }`}
+                  className={`flex-1 py-3 rounded-2xl text-xs font-bold uppercase tracking-wider border-2 flex items-center justify-center gap-2 transition-all ${deliveryType === "delivery"
+                    ? "border-[#801818] bg-[#801818] text-white shadow-sm"
+                    : "border-[#ebd8c5] text-[#444] hover:border-[#801818]"
+                    }`}
                 >
                   <span>🚚 Doorstep Delivery</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => setDeliveryType("pickup")}
-                  className={`flex-1 py-3 rounded-2xl text-xs font-bold uppercase tracking-wider border-2 flex items-center justify-center gap-2 transition-all ${
-                    deliveryType === "pickup"
-                      ? "border-[#801818] bg-[#801818] text-white shadow-sm"
-                      : "border-[#ebd8c5] text-[#444] hover:border-[#801818]"
-                  }`}
+                  className={`flex-1 py-3 rounded-2xl text-xs font-bold uppercase tracking-wider border-2 flex items-center justify-center gap-2 transition-all ${deliveryType === "pickup"
+                    ? "border-[#801818] bg-[#801818] text-white shadow-sm"
+                    : "border-[#ebd8c5] text-[#444] hover:border-[#801818]"
+                    }`}
                 >
                   <span>🏪 Bakery Pickup</span>
                 </button>
@@ -423,7 +416,7 @@ export const OrderPage: React.FC = () => {
                       </p>
                     </div>
                     <span className="font-extrabold text-xs text-[#801818]">
-                      ${(item.product.price * item.quantity).toFixed(2)}
+                      ₹{(item.product.price * item.quantity).toFixed(2)}
                     </span>
                   </div>
                 ))
@@ -443,7 +436,7 @@ export const OrderPage: React.FC = () => {
                     </p>
                   </div>
                   <span className="font-extrabold text-xs text-[#801818]">
-                    ${(selectedProduct.price * quantity).toFixed(2)}
+                    ₹{(selectedProduct.price * quantity).toFixed(2)}
                   </span>
                 </div>
               )}
@@ -454,7 +447,7 @@ export const OrderPage: React.FC = () => {
               <div className="flex justify-between">
                 <span>Subtotal</span>
                 <span>
-                  ${(cartTotal || selectedProduct.price * quantity).toFixed(2)}
+                  ₹{(cartTotal || selectedProduct.price * quantity).toFixed(2)}
                 </span>
               </div>
               <div className="flex justify-between">
@@ -465,11 +458,11 @@ export const OrderPage: React.FC = () => {
               </div>
               <div className="flex justify-between">
                 <span>Sales Tax (8%)</span>
-                <span>${taxAmount.toFixed(2)}</span>
+                <span> ₹{taxAmount.toFixed(2)}</span>
               </div>
               <div className="flex justify-between font-extrabold text-base text-[#222225] pt-2 border-t border-[#ebd8c5]">
                 <span>Total Amount</span>
-                <span className="text-[#801818]">${finalTotal.toFixed(2)}</span>
+                <span className="text-[#801818]"> ₹{finalTotal.toFixed(2)}</span>
               </div>
             </div>
 

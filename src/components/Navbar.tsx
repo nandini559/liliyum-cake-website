@@ -51,8 +51,8 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => navigateTo("home")}
                 className={`transition-colors hover:text-[#801818] ${activePage === "home"
-                    ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
-                    : ""
+                  ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
+                  : ""
                   }`}
               >
                 HOME
@@ -62,8 +62,8 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => navigateTo("collections")}
                 className={`transition-colors hover:text-[#801818] ${activePage === "collections"
-                    ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
-                    : ""
+                  ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
+                  : ""
                   }`}
               >
                 COLLECTIONS
@@ -73,23 +73,14 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => navigateTo("about")}
                 className={`transition-colors hover:text-[#801818] ${activePage === "about"
-                    ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
-                    : ""
+                  ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
+                  : ""
                   }`}
               >
                 OUR STORY
               </button>
 
-              <button
-                type="button"
-                onClick={() => navigateTo("order")}
-                className={`transition-colors hover:text-[#801818] ${activePage === "order"
-                    ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
-                    : ""
-                  }`}
-              >
-                ORDER CAKES
-              </button>
+
             </div>
 
             {/* Right Navigation */}
