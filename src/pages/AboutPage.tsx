@@ -40,6 +40,47 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
+
+      <section className="max-w-[1280px] mx-auto px-4 md:px-12 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          {/* Left Deep Red Hero Card */}
+          <div className="lg:col-span-6 bg-[#801818] text-white p-8 md:p-12 rounded-3xl flex flex-col justify-between space-y-6 shadow-lg">
+            <div className="space-y-4">
+              <h1 className="font-display text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
+                HEY, YOUR CHEESECAKE IS ALMOST READY!
+              </h1>
+              <p className="text-xs sm:text-sm text-[#f5d5d8] leading-relaxed max-w-md">
+                A rich and creamy cheesecake made with smooth cream cheese, set
+                on a crunchy biscuit crust and topped with fresh strawberries
+                and sweet strawberry glaze.
+              </p>
+            </div>
+            <div>
+              <button
+                type="button"
+                onClick={() => {
+                  addToCart(PRODUCTS[0]);
+                  setIsCartOpen(true);
+                }}
+                className="bg-white text-[#801818] hover:bg-[#fce8ea] px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider shadow-md transition-all"
+              >
+                ORDER NOW
+              </button>
+            </div>
+          </div>
+
+          {/* Right Photographic Banner Image */}
+          <div className="lg:col-span-6 rounded-3xl overflow-hidden shadow-lg h-[350px] lg:h-auto">
+            <img
+              src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=1000&q=80"
+              alt="Cheesecake slices with berries"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+
       {/* Brand Story Section */}
       <section className="max-w-[1280px] mx-auto px-6 md:px-12 py-12">
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-[#ebd8c5] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
