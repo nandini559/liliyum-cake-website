@@ -15,7 +15,7 @@ export const PRODUCTS: Product[] = [
     longDescription:
       "Treat yourself to a moment of lil' yum. Handcrafted daily with French choux dough, fresh organic raspberry reduction, and silky mascarpone. Each eclair is finished with edible 24k gold leaf and fresh raspberries.",
     images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC6CzmM5FRhKRqE6QEuIcKIM_O7g3djdKjIVBCOxzSSRJL03nKKj8_WzkmvT-5EYCCZNr0oL_P8O-RY0heEzdPliBmPuOR-iBynIJhb2mEBnB0O3Be1rlDycaAFQMP8Cw-N0V9TlkCuwVWcOVNSBVd3QipsLCTAnnjBT_kRgbhhojwtSIkO-Z8Kx2iKb_rtGahDvI0mGWJt__QO35bAUnHQutrftiaC6_h9Z2jwoDz20jaIaOAwsmpWow",
+      "https://liliyum.com/cdn/shop/files/OmbreButterflycake_540x.jpg?v=1684319267",
       "https://lh3.googleusercontent.com/aida-public/AB6AXuCDtSnXaXul8Wf746rCHmGAyjnUQXNDI4RoLZ3kPCXli24nPQ-TbyK3k6ZnYCccTh4NV3uuxjp59TRL5l4wYfhX3LTb8xO78FOHicBZ6PKqW-bo3FgxdSIhhzCEcjuTlAWwbrSjwne_XnRLkm9WqsXGM3FtwkZePYRLE6c44GirBCx-BHdEeloFT0BV5J6dIEvskujTn9xmWPqZ8tzNM8qdcN--QECwXca7gtsunBmcRDk67rpYG4_u8A",
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBynagwxGZMHQPfV3dMmoWo5GeAv9UWDWXIbVPVnaNO3K4L0Uo1CUItac6NIMnOvPsJUu7_mD1w_vXOdqboxQCCGAxxGGDObP05tmx3iWaX-OT5S0NzXHonnmrZywtlYZlhQZbB9mkiNtDnl5B9dWP7qevCXddz-Lc7iRtJdhiTnVMySo6MrdM72kBGPj4FDIqjKQJTQEbl_EJuwigZP_cq4y3bj85L2qLrKs1twmICIcuVtQV0R1e6Rw",
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDg5KA8i27ycWLb5CIg_3JdBq7Cx2sGoiQ-BBhZBFy-hgAJ2gnYUAG9ax2ORxXv5sMZ46srr5pSwodxrt96cXRWUAAVA5WugyPmz7qbJK9ghN5ZZlEoJA3nQw5Eb7K9BYWRCbuz3tT3sSDrBhxDHPsrzaH0llGEkTzZGcbDC9TsRsAVkWGOLLldtoqb1fgTLRbgZrchp0LxF8sF2zyijvKhrWRw2eAOJY18_r8auq-HJKoWh6c4HP8_gw",
@@ -52,8 +52,7 @@ export const PRODUCTS: Product[] = [
     longDescription:
       "A masterpiece of delicate floral and nutty notes. Light rose-scented chiffon cake layered with roasted pistachio cream and finished with pastel pink Swiss buttercream.",
     images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCVXfiegZilIAKEhjtLNYEPEU8Pn04mZ-QtHmOYkMK0o32KNIHOFbaeXNxrC6GvaWBqSRi8qPgJhHHSX-z1BLdPJrB8a-NkReK3Tv6xg0Y0TMP2N-EppWA-cUWuimCc3UjSmK0X4_9DOy2x4SPiVtECh0-k73AHL7nM8HrhDeEz0BMd499E8zGB96doKe4Sw95G6M4Lvm-Q_hHWoXac-PJ8KYeMktA5RvqG1tsFVUEF11KBOE_ZcWDFUw",
-    ],
+      "https://liliyum.com/cdn/shop/files/Blueberry_cake_540x.jpg?v=1774103245"],
     flavors: ["Rose & Pistachio", "Cardamom Vanilla"],
     sizes: ["0.5 kg (Serves 4-6)", "1 kg (Serves 8-10)", "2 kg (Serves 15-20)"],
     bgColor: "#fce7f3",
@@ -85,8 +84,7 @@ export const PRODUCTS: Product[] = [
     longDescription:
       "For true chocolate connoisseurs. Made exclusively with 70% Callebaut dark chocolate from Belgium, layered with velvety cocoa ganache.",
     images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCLvPR8LLvJ_pp7xVL-jzgZxglw1qaKRoloCCQHYQJ895N17WGIKqhOJcDSGWG1swoHU95KDrCMhagpBFf8SODMiAvmj9S0W1NL9BqpOJtzZxWqcOipMYPJQIW8hqCi5NfnLruuT9lc24vGnhdT9BPUcpuwFHVI666IGxfTLGVIl7PxMnZQwKZuHxL-eMKD1Omhr0GpzHNjm2l8wOQ8N3kfdLeTgiBPxg5WBzivas_jUfFi4ScX1Y71jw",
-    ],
+      "https://liliyum.com/cdn/shop/files/Mango_Tres_Leches_540x.jpg?v=1776248681"],
     flavors: ["70% Dark Chocolate", "Dark Orange Truffle"],
     sizes: ["0.5 kg", "1 kg", "1.5 kg"],
     bgColor: "#f5f5f4",
@@ -113,8 +111,7 @@ export const PRODUCTS: Product[] = [
     longDescription:
       "Timeless elegance in every slice. Fragrant with natural speckles of real Madagascar vanilla pod, complemented by a light whipped cream frosting.",
     images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBcfVxvD63nOb6ddCz9-03Gk29-XTL4talZQVswIF_7IgSm0EswmbdbNzEez9zj5zI04i7rBvPhX6FS5CsWPp40haqcRSXkI1qAXMUvzmRiB7YssRqM88OTTgh5ffLhFbhArCCCR8Uiw7aUcfF0u8-6Lyntv3kzY_7ISdiNNpcL0nNgzgCgBvOfoJXkq1W4FlPsdNbVViGWqJDnq83yjTHVF9tAKigqzfvAHQ_h9OVHgEG55Ias9-6BOQ",
-    ],
+      "https://liliyum.com/cdn/shop/files/BlueandGoldBirthdayCake_540x.jpg?v=1687825140"],
     flavors: ["Madagascar Vanilla", "Vanilla Raspberry"],
     sizes: ["0.5 kg", "1 kg"],
     bgColor: "#fef3c7",
@@ -140,8 +137,7 @@ export const PRODUCTS: Product[] = [
     longDescription:
       "Designed for extraordinary moments. Crafted custom for your event with choices of champagne sponge, rose pistachio, or chocolate hazelnut praline.",
     images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDqlo_bt3Uj52NUK36a5-Y2hBm3DbUiZLcKbIJaU7ius_iTlJ9WwiJv8frIVxuf8fBCg9wCN0aTTd1D7FtWwDbExU-Ak01yMbSbZ9Jl6DUFB_xUQHkPr615Y3pCuPEcitlJ7-_znLMUVNOOD3dXo-QllTlbhXjS88ryIYYE135ETIoPNZuEJOjLe0QZT_nl00O6xcRA9XVFlQluzUky9AMmASMBs3ft9K7v5LinJJRTk7Y06ZRVmRt6tg",
-    ],
+      "https://liliyum.com/cdn/shop/products/Birthdaycakebrownies_540x.jpg?v=1630921524"],
     flavors: [
       "Champagne & Strawberry",
       "Belgian Chocolate Hazelnut",
@@ -172,8 +168,7 @@ export const PRODUCTS: Product[] = [
     longDescription:
       "The ultimate gift box for celebrations. Packed with handpicked Liliyum favorites including 12 hand-decorated chocolates and freshly baked sablés.",
     images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuA7bz0dSDS8Z3e6LqqNrkk3CCrxc68LD2XZ5-x371Y-FMROxkqSxuV-9xkbVDBCNPeBCznW_mbwoFcGGWSnrIg9AXciZik_iADS0K7doVy0Wrb_h5wIk3IWZRClNXVTZU-bij2kIUrSsyOJ1dv4wFlR5PU1Co9J-A2xDQ5KXzYykwvCyyulDB7a8gE27Jou-5ISgvo9C0P4cse6rVgIkhUO7ez5ichPfjznVKwFs06vJx_EOGG9g8RQQw",
-    ],
+      "https://liliyum.com/cdn/shop/files/lineartbirthdaycake_540x.jpg?v=1715160029"],
     flavors: ["Grand Assortment"],
     sizes: ["Standard Hamper", "Deluxe Velvet Hamper"],
     bgColor: "#ecfdf5",

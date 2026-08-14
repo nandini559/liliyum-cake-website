@@ -209,26 +209,26 @@ export const CollectionsPage: React.FC = () => {
 
   return (
     <main className="w-full min-h-screen bg-[#fbf4ea] text-[#222222]">
-      <section className="max-w-[1280px] mx-auto px-4 md:px-12 py-16">
-        <h2 className="font-display text-3xl md:text-5xl font-extrabold text-[#801818] mb-2 tracking-tight text-center">
+      <section className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12 py-8 md:py-16">
+        <h2 className="font-display text-2xl sm:text-4xl md:text-5xl font-extrabold text-[#801818] mb-2 tracking-tight text-center">
           EXPLORE OUR CAKES
         </h2>
 
-        <h2 className=" text-xl text-[#666666] mb-12 tracking-tight text-center">
+        <p className="text-xs sm:text-base md:text-xl text-[#666666] mb-8 md:mb-12 tracking-tight text-center max-w-2xl mx-auto">
           Find our most loved and curated creations according to your favourites
-        </h2>
+        </p>
 
         {/* Product Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-8">
           {menuItems.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-3xl p-6 shadow-sm border border-[#ebd8c5] flex flex-col justify-between text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="bg-white rounded-3xl p-4 sm:p-6 shadow-sm border border-[#ebd8c5] flex flex-col justify-between text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               {/* Product Image */}
               <div
                 style={{ backgroundColor: item.bgColor }}
-                className="aspect-[4/3] rounded-2xl p-4 overflow-hidden mb-5"
+                className="aspect-[4/3] rounded-2xl p-3 sm:p-4 overflow-hidden mb-4 sm:mb-5"
               >
                 <img
                   src={item.images[0]}
@@ -238,12 +238,12 @@ export const CollectionsPage: React.FC = () => {
               </div>
 
               {/* Product Info */}
-              <div className="space-y-3 mb-5">
-                <h3 className="font-display font-extrabold text-lg md:text-xl text-[#222222]">
+              <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-5 flex-1 flex flex-col justify-between">
+                <h3 className="font-display font-extrabold text-base sm:text-lg md:text-xl text-[#222222]">
                   {item.name}
                 </h3>
 
-                <div className="flex flex-wrap justify-center gap-2 text-xs text-[#666666] font-semibold">
+                <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-[#666666] font-semibold">
                   {item.tags.map((tag) => (
                     <span key={tag}> {tag}</span>
                   ))}
@@ -251,15 +251,15 @@ export const CollectionsPage: React.FC = () => {
               </div>
 
               {/* Price & Cart */}
-              <div className="flex justify-between items-center pt-4 border-t border-[#f3e3d3]">
-                <span className="font-extrabold text-lg text-[#801818]">
+              <div className="flex justify-between items-center gap-2 pt-3 sm:pt-4 border-t border-[#f3e3d3]">
+                <span className="font-extrabold text-base sm:text-lg text-[#801818] whitespace-nowrap">
                   ₹{item.price}
                 </span>
 
                 <button
                   type="button"
                   onClick={() => addToCart(item)}
-                  className="bg-[#801818] hover:bg-[#661212] text-white text-sm font-bold px-5 py-2.5 rounded-full shadow-sm transition-all hover:scale-105"
+                  className="bg-[#801818] hover:bg-[#661212] text-white text-xs sm:text-sm font-bold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-sm transition-all hover:scale-105"
                 >
                   Add to Cart
                 </button>

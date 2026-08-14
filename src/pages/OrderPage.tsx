@@ -121,15 +121,14 @@ export const OrderPage: React.FC = () => {
   }
 
   return (
-    <main className="w-full bg-[#fbf4ea] text-[#222225] py-10 font-sans">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+    <main className="w-full bg-[#fbf4ea] text-[#222225] py-6 sm:py-10 font-sans">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12">
         {/* Page Header */}
-        <div className="text-center mb-10">
-
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold text-[#801818] uppercase tracking-tight">
+        <div className="text-center mb-6 sm:mb-10">
+          <h1 className="font-display text-2xl sm:text-3xl md:text-5xl font-extrabold text-[#801818] uppercase tracking-tight">
             Order Your Cakes
           </h1>
-          <p className="text-xs text-[#666666]  mx-auto mt-2">
+          <p className="text-xs text-[#666666] max-w-xl mx-auto mt-2">
             Select your preferred flavor, size, custom message, and delivery
             slot. Freshly baked and delivered to your doorstep.
           </p>
@@ -137,13 +136,13 @@ export const OrderPage: React.FC = () => {
 
         <form
           onSubmit={handleSubmitOrder}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start"
         >
           {/* Left Column: Customization & Customer Info (7 cols) */}
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
             {/* Step 1: Select Cake & Customization */}
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#ebd8c5] space-y-6">
-              <h2 className="font-display text-xl font-extrabold text-[#801818] flex items-center gap-2 border-b border-[#ebd8c5] pb-3">
+            <div className="bg-white p-5 sm:p-6 md:p-8 rounded-3xl shadow-sm border border-[#ebd8c5] space-y-5 sm:space-y-6">
+              <h2 className="font-display text-lg sm:text-xl font-extrabold text-[#801818] flex items-center gap-2 border-b border-[#ebd8c5] pb-3">
                 <span>1.</span> Cake Customization
               </h2>
 
@@ -152,12 +151,12 @@ export const OrderPage: React.FC = () => {
                 <label className="text-xs font-extrabold uppercase text-[#222225] block mb-2">
                   Select Varients:
                 </label>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
                   {PRODUCTS.slice(0, 4).map((item) => (
                     <div
                       key={item.id}
                       onClick={() => setSelectedProduct(item)}
-                      className={`p-2.5 rounded-2xl border-2 cursor-pointer transition-all text-center ${selectedProduct.id === item.id
+                      className={`p-2 sm:p-2.5 rounded-2xl border-2 cursor-pointer transition-all text-center ${selectedProduct.id === item.id
                         ? "border-[#801818] bg-[#fce8ea]"
                         : "border-[#ebd8c5] hover:border-[#801818]"
                         }`}
@@ -165,9 +164,9 @@ export const OrderPage: React.FC = () => {
                       <img
                         src={item.images[0]}
                         alt={item.name}
-                        className="w-16 h-16 object-cover rounded-xl mx-auto mb-2"
+                        className="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-xl mx-auto mb-2"
                       />
-                      <p className="font-display font-extrabold text-xs text-[#222225] truncate">
+                      <p className="font-display font-extrabold text-[11px] sm:text-xs text-[#222225] truncate">
                         {item.name}
                       </p>
                       <p className="text-[10px] font-bold text-[#801818]">
@@ -194,7 +193,7 @@ export const OrderPage: React.FC = () => {
                       type="button"
                       key={flv}
                       onClick={() => setFlavor(flv)}
-                      className={`py-2 px-3 rounded-xl text-xs font-bold border-2 transition-all ${flavor === flv
+                      className={`py-2 px-2 sm:px-3 rounded-xl text-[11px] sm:text-xs font-bold border-2 transition-all ${flavor === flv
                         ? "border-[#801818] bg-[#801818] text-white"
                         : "border-[#ebd8c5] text-[#444] hover:border-[#801818]"
                         }`}
@@ -210,14 +209,14 @@ export const OrderPage: React.FC = () => {
                 <label className="text-xs font-extrabold uppercase text-[#222225] block mb-2">
                   Portion / Size:
                 </label>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {["Single Slice", "Half Cake (4)", "Whole Cake (8)"].map(
                     (sz) => (
                       <button
                         type="button"
                         key={sz}
                         onClick={() => setSize(sz)}
-                        className={`py-2 px-4 rounded-xl text-xs font-bold border-2 transition-all ${size === sz
+                        className={`py-2 px-3 sm:px-4 rounded-xl text-[11px] sm:text-xs font-bold border-2 transition-all flex-1 sm:flex-initial text-center ${size === sz
                           ? "border-[#801818] bg-[#801818] text-white"
                           : "border-[#ebd8c5] text-[#444] hover:border-[#801818]"
                           }`}
@@ -250,12 +249,12 @@ export const OrderPage: React.FC = () => {
             </div>
 
             {/* Step 2: Delivery vs Pickup & Slot */}
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#ebd8c5] space-y-6">
-              <h2 className="font-display text-xl font-extrabold text-[#801818] flex items-center gap-2 border-b border-[#ebd8c5] pb-3">
+            <div className="bg-white p-5 sm:p-6 md:p-8 rounded-3xl shadow-sm border border-[#ebd8c5] space-y-5 sm:space-y-6">
+              <h2 className="font-display text-lg sm:text-xl font-extrabold text-[#801818] flex items-center gap-2 border-b border-[#ebd8c5] pb-3">
                 <span>2.</span> Delivery & Date Slot
               </h2>
 
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button
                   type="button"
                   onClick={() => setDeliveryType("delivery")}
@@ -320,8 +319,8 @@ export const OrderPage: React.FC = () => {
             </div>
 
             {/* Step 3: Customer Information */}
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#ebd8c5] space-y-4">
-              <h2 className="font-display text-xl font-extrabold text-[#801818] flex items-center gap-2 border-b border-[#ebd8c5] pb-3">
+            <div className="bg-white p-5 sm:p-6 md:p-8 rounded-3xl shadow-sm border border-[#ebd8c5] space-y-4">
+              <h2 className="font-display text-lg sm:text-xl font-extrabold text-[#801818] flex items-center gap-2 border-b border-[#ebd8c5] pb-3">
                 <span>3.</span> Customer Contact & Address
               </h2>
 
@@ -389,8 +388,8 @@ export const OrderPage: React.FC = () => {
           </div>
 
           {/* Right Column: Order Summary & Place Order CTA (5 cols) */}
-          <div className="lg:col-span-5 bg-white p-8 rounded-3xl shadow-sm border border-[#ebd8c5] space-y-6 sticky top-28">
-            <h2 className="font-display text-xl font-extrabold text-[#801818] border-b border-[#ebd8c5] pb-3">
+          <div className="lg:col-span-5 bg-white p-5 sm:p-6 md:p-8 rounded-3xl shadow-sm border border-[#ebd8c5] space-y-6 lg:sticky lg:top-28">
+            <h2 className="font-display text-lg sm:text-xl font-extrabold text-[#801818] border-b border-[#ebd8c5] pb-3">
               Order Summary
             </h2>
 
@@ -405,7 +404,7 @@ export const OrderPage: React.FC = () => {
                     <img
                       src={item.product.images[0]}
                       alt={item.product.name}
-                      className="w-12 h-12 object-cover rounded-xl"
+                      className="w-12 h-12 object-cover rounded-xl shrink-0"
                     />
                     <div className="flex-1 min-w-0">
                       <p className="font-display font-extrabold text-xs text-[#222225] truncate">
@@ -415,7 +414,7 @@ export const OrderPage: React.FC = () => {
                         Qty: {item.quantity} • {item.selectedFlavor || flavor}
                       </p>
                     </div>
-                    <span className="font-extrabold text-xs text-[#801818]">
+                    <span className="font-extrabold text-xs text-[#801818] whitespace-nowrap">
                       ₹{(item.product.price * item.quantity).toFixed(2)}
                     </span>
                   </div>
@@ -425,7 +424,7 @@ export const OrderPage: React.FC = () => {
                   <img
                     src={selectedProduct.images[0]}
                     alt={selectedProduct.name}
-                    className="w-12 h-12 object-cover rounded-xl"
+                    className="w-12 h-12 object-cover rounded-xl shrink-0"
                   />
                   <div className="flex-1 min-w-0">
                     <p className="font-display font-extrabold text-xs text-[#222225] truncate">
@@ -435,7 +434,7 @@ export const OrderPage: React.FC = () => {
                       Qty: {quantity} • {flavor}
                     </p>
                   </div>
-                  <span className="font-extrabold text-xs text-[#801818]">
+                  <span className="font-extrabold text-xs text-[#801818] whitespace-nowrap">
                     ₹{(selectedProduct.price * quantity).toFixed(2)}
                   </span>
                 </div>
@@ -453,7 +452,7 @@ export const OrderPage: React.FC = () => {
               <div className="flex justify-between">
                 <span>Delivery Fee</span>
                 <span>
-                  {deliveryFee === 0 ? "FREE" : `$${deliveryFee.toFixed(2)}`}
+                  {deliveryFee === 0 ? "FREE" : `₹${deliveryFee.toFixed(2)}`}
                 </span>
               </div>
               <div className="flex justify-between">
@@ -469,9 +468,9 @@ export const OrderPage: React.FC = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-[#801818] hover:bg-[#661212] text-white py-4 rounded-full font-bold text-xs uppercase tracking-wider shadow-lg transition-all"
+              className="w-full bg-[#801818] hover:bg-[#661212] text-white py-3.5 sm:py-4 rounded-full font-bold text-xs uppercase tracking-wider shadow-lg transition-all"
             >
-              Place Order Now (${finalTotal.toFixed(2)})
+              Place Order Now (₹{finalTotal.toFixed(2)})
             </button>
 
             <div className="text-center text-[10px] text-[#888888]">

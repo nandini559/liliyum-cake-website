@@ -18,7 +18,7 @@ export const Navbar: React.FC = () => {
       <header className="sticky top-0 z-[100] w-full">
 
         {/* Top Ticker Announcement Bar */}
-        <div className="bg-[#801818] text-white text-[11px] font-bold py-2 px-4 uppercase tracking-widest overflow-hidden whitespace-nowrap">
+        <div className="bg-[#801818] text-white text-[10px] sm:text-[11px] font-bold py-2 px-3 sm:px-4 uppercase tracking-widest overflow-hidden whitespace-nowrap">
           <div className="inline-block animate-marquee">
             FRESHLY BAKED EVERYDAY • DREAMY, FRESH & DELICIOUS • MADE TO SWEETEN
             YOUR DAY • BRINGING YOU THE BEST CHEESECAKE • FRESHLY BAKED EVERYDAY
@@ -29,62 +29,62 @@ export const Navbar: React.FC = () => {
 
         {/* Main Navbar */}
         <nav className="bg-[#fbf4ea] border-b border-[#ebd8c5] transition-all duration-300">
-          <div className="flex justify-between items-center w-full px-4 md:px-8 py-2 max-w-[1180px] mx-auto">
+          <div className="flex justify-between items-center w-full px-4 sm:px-6 md:px-8 py-1.5 sm:py-2 max-w-[1280px] mx-auto">
 
-            {/* Left Navigation Links */}
-            <div className="hidden md:flex items-center space-x-6 text-xs font-bold uppercase tracking-wider text-[#222225]">
-
-              {/* Logo */}
+            {/* Left Header Container: Logo + Desktop Navigation Links */}
+            <div className="flex items-center space-x-4 md:space-x-6 text-xs font-bold uppercase tracking-wider text-[#222225]">
+              {/* Logo (Visible on all screen sizes) */}
               <button
                 type="button"
                 onClick={() => navigateTo("home")}
-                className="flex items-center justify-center group"
+                className="flex items-center justify-center group shrink-0"
               >
                 <img
                   src="https://liliyum.com/cdn/shop/files/liliyum-logos-allsizes_Instagram-profile_copy_400x.png?v=1613708813"
                   alt="Liliyum Cakes"
-                  className="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-105"
+                  className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain transition-transform duration-300 group-hover:scale-105"
                 />
               </button>
 
-              <button
-                type="button"
-                onClick={() => navigateTo("home")}
-                className={`transition-colors hover:text-[#801818] ${activePage === "home"
-                  ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
-                  : ""
-                  }`}
-              >
-                HOME
-              </button>
+              {/* Desktop Nav Links */}
+              <div className="hidden md:flex items-center space-x-6 text-xs font-bold uppercase tracking-wider text-[#222225]">
+                <button
+                  type="button"
+                  onClick={() => navigateTo("home")}
+                  className={`transition-colors hover:text-[#801818] ${activePage === "home"
+                    ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
+                    : ""
+                    }`}
+                >
+                  HOME
+                </button>
 
-              <button
-                type="button"
-                onClick={() => navigateTo("collections")}
-                className={`transition-colors hover:text-[#801818] ${activePage === "collections"
-                  ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
-                  : ""
-                  }`}
-              >
-                COLLECTIONS
-              </button>
+                <button
+                  type="button"
+                  onClick={() => navigateTo("collections")}
+                  className={`transition-colors hover:text-[#801818] ${activePage === "collections"
+                    ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
+                    : ""
+                    }`}
+                >
+                  COLLECTIONS
+                </button>
 
-              <button
-                type="button"
-                onClick={() => navigateTo("about")}
-                className={`transition-colors hover:text-[#801818] ${activePage === "about"
-                  ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
-                  : ""
-                  }`}
-              >
-                OUR STORY
-              </button>
-
-
+                <button
+                  type="button"
+                  onClick={() => navigateTo("about")}
+                  className={`transition-colors hover:text-[#801818] ${activePage === "about"
+                    ? "text-[#801818] font-extrabold border-b-2 border-[#801818] pb-0.5"
+                    : ""
+                    }`}
+                >
+                  OUR STORY
+                </button>
+              </div>
             </div>
 
             {/* Right Navigation */}
-            <div className="flex items-center space-x-4 text-xs font-bold uppercase tracking-wider text-[#222225]">
+            <div className="flex items-center space-x-3 sm:space-x-4 text-xs font-bold uppercase tracking-wider text-[#222225]">
 
               {/* Cart */}
               <button
@@ -93,7 +93,7 @@ export const Navbar: React.FC = () => {
                 onClick={() => setIsCartOpen(true)}
                 className="text-[#222225] p-1.5 hover:bg-[#fce8ea] rounded-full transition-colors relative"
               >
-                <span className="material-symbols-outlined text-[22px]">
+                <span className="material-symbols-outlined text-[22px] sm:text-[24px]">
                   shopping_bag
                 </span>
 
@@ -115,7 +115,8 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden text-[#222225] p-1"
+                className="md:hidden text-[#222225] p-1.5 rounded-lg hover:bg-[#fce8ea] transition-colors"
+                aria-label="Toggle navigation menu"
               >
                 <span className="material-symbols-outlined text-2xl">
                   {mobileMenuOpen ? "close" : "menu"}
@@ -126,7 +127,7 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden bg-[#fbf4ea] border-t border-[#ebd8c5] px-6 py-4 space-y-3 font-bold text-xs uppercase tracking-wider">
+            <div className="md:hidden bg-[#fbf4ea] border-t border-[#ebd8c5] px-6 py-4 space-y-3 font-bold text-xs uppercase tracking-wider shadow-inner">
 
               <button
                 type="button"
@@ -134,7 +135,7 @@ export const Navbar: React.FC = () => {
                   navigateTo("home");
                   setMobileMenuOpen(false);
                 }}
-                className="block py-2 text-[#801818]"
+                className={`block w-full text-left py-2 transition-colors ${activePage === "home" ? "text-[#801818] font-extrabold" : "text-[#222225]"}`}
               >
                 Home
               </button>
@@ -145,7 +146,7 @@ export const Navbar: React.FC = () => {
                   navigateTo("collections");
                   setMobileMenuOpen(false);
                 }}
-                className="block py-2 text-[#222225]"
+                className={`block w-full text-left py-2 transition-colors ${activePage === "collections" ? "text-[#801818] font-extrabold" : "text-[#222225]"}`}
               >
                 Browse Collections
               </button>
@@ -156,7 +157,7 @@ export const Navbar: React.FC = () => {
                   navigateTo("order");
                   setMobileMenuOpen(false);
                 }}
-                className="block py-2 text-[#222225]"
+                className={`block w-full text-left py-2 transition-colors ${activePage === "order" ? "text-[#801818] font-extrabold" : "text-[#222225]"}`}
               >
                 Order / Customize Cake
               </button>
@@ -167,7 +168,7 @@ export const Navbar: React.FC = () => {
                   navigateTo("about");
                   setMobileMenuOpen(false);
                 }}
-                className="block py-2 text-[#222225]"
+                className={`block w-full text-left py-2 transition-colors ${activePage === "about" ? "text-[#801818] font-extrabold" : "text-[#222225]"}`}
               >
                 Our Story
               </button>
