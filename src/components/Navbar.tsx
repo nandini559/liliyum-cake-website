@@ -15,7 +15,7 @@ export const Navbar: React.FC = () => {
   return (
     <>
       {/* Top Ticker Announcement Bar */}
-      <div className="bg-[#801818] text-white text-[11px] font-bold py-2 px-4 uppercase tracking-widest overflow-hidden whitespace-nowrap z-50 relative">
+      <div className="bg-[#801818] text-white text-[11px] font-bold py-2 px-4 uppercase tracking-widest overflow-hidden whitespace-nowrap z-50 relative ">
         <div className="inline-block animate-marquee">
           FRESHLY BAKED EVERYDAY • DREAMY, FRESH & DELICIOUS • MADE TO SWEETEN
           YOUR DAY • BRINGING YOU THE BEST CHEESECAKE • FRESHLY BAKED EVERYDAY

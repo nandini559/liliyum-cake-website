@@ -13,41 +13,42 @@ export const Footer: React.FC = () => {
       <footer className="bg-[#801818] text-white pt-12 pb-8 px-6 md:px-12">
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border-b border-white/20 pb-10">
           {/* Massive Display Logo */}
-          <div className="lg:col-span-6">
-            <h1 className="font-display text-6xl md:text-8xl font-extrabold tracking-tighter text-white">
-              Cravie
-            </h1>
+          <div className="lg:col-span-4">
+            <img
+              src="https://liliyum.com/cdn/shop/files/liliyum-logos-allsizes_Instagram-profile_copy_400x.png?v=1613708813"
+              alt="Liliyum"
+              className="w-24 md:w-32 lg:w-40 h-auto object-contain"
+            />
           </div>
 
           {/* Multi-Column Links */}
-          <div className="lg:col-span-6 grid grid-cols-3 gap-6 text-xs text-[#f5d5d8]">
-            <div className="space-y-2">
-              <h5 className="font-bold text-white uppercase text-[10px] tracking-wider">
-                Discover
-              </h5>
-              <ul className="space-y-1">
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Catalog
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Featured
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Gift Cards
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Custom Order
-                  </a>
-                </li>
-              </ul>
-            </div>
+          <div className="lg:col-span-6 grid grid-cols-3 gap-8 text-xs text-[#f5d5d8] max-w-2xl mx-auto justify-items-center">            <div className="space-y-2">
+            <h5 className="font-bold text-white uppercase text-[10px] tracking-wider">
+              Discover
+            </h5>
+            <ul className="space-y-1">
+              <li>
+                <a href="#" className="hover:text-white">
+                  Catalog
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white">
+                  Featured
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white">
+                  Gift Cards
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white">
+                  Custom Order
+                </a>
+              </li>
+            </ul>
+          </div>
 
             <div className="space-y-2">
               <h5 className="font-bold text-white uppercase text-[10px] tracking-wider">

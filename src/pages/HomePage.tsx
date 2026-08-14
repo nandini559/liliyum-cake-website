@@ -187,23 +187,24 @@ export const HomePage: React.FC = () => {
         <div className="max-w-[1280px] mx-auto px-4 md:px-12">
 
           {/* Heading */}
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <h2 className="font-display text-3xl md:text-5xl font-extrabold text-[#801818] uppercase tracking-tight ">
+          <div className="relative flex justify-center mb-10">
+            {/* Center Heading */}
+            <div className="text-center">
+              <h2 className="font-display text-3xl md:text-5xl font-extrabold text-[#801818] uppercase tracking-tight">
                 BEST SELLERS
               </h2>
 
-              <p className="text-xs text-[#666666] max-w-lg mt-2">
+              <p className="text-xs text-[#666666] max-w-lg mt-2 mx-auto">
                 Our most loved cakes and desserts, baked fresh for every celebration.
               </p>
             </div>
 
             {/* Navigation Buttons */}
-            <div className="hidden sm:flex gap-3">
+            <div className="hidden sm:flex gap-3 absolute right-0 bottom-0">
               <button
                 type="button"
                 onClick={() => scrollCarousel("left")}
-                className="w-10 h-10 rounded-full border border-[#ebd8c5] text-[#801818] hover:bg-[#801818] hover:text-white transition-all flex items-center justify-center"
+                className="w-10 h-10 rounded-full border border-[#ebd8c5] text-[#596613] hover:bg-[#596613] hover:text-white transition-all flex items-center justify-center"
                 aria-label="Previous products"
               >
                 ←
@@ -212,7 +213,7 @@ export const HomePage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => scrollCarousel("right")}
-                className="w-10 h-10 rounded-full bg-[#801818] text-white hover:bg-[#661212] transition-all flex items-center justify-center"
+                className="w-10 h-10 rounded-full bg-[#596613] text-white hover:bg-[#596613] transition-all flex items-center justify-center"
                 aria-label="Next products"
               >
                 →
@@ -246,7 +247,7 @@ export const HomePage: React.FC = () => {
                     />
 
                     {/* Bestseller Badge */}
-                    <span className="absolute top-4 left-4 bg-[#801818] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
+                    <span className="absolute top-4 left-4 bg-[#596613] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
                       Bestseller
                     </span>
                   </button>
@@ -273,7 +274,7 @@ export const HomePage: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => addToCart(product)}
-                        className="flex-1 bg-[#801818] hover:bg-[#661212] text-white py-3 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all"
+                        className="flex-1 bg-[#596613] hover:bg-[#596613] text-white py-3 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all"
                       >
                         Add to Cart
                       </button>
@@ -283,7 +284,7 @@ export const HomePage: React.FC = () => {
                         onClick={() =>
                           navigateTo("product-detail", product.id)
                         }
-                        className="px-4 py-3 rounded-full border border-[#801818] text-[#801818] hover:bg-[#fce8ea] transition-all text-[11px] font-bold"
+                        className="px-4 py-3 rounded-full border border-[#596613] text-[#596613] hover:bg-[#fce8ea] transition-all text-[11px] font-bold"
                       >
                         View
                       </button>
@@ -298,7 +299,7 @@ export const HomePage: React.FC = () => {
             <button
               type="button"
               onClick={() => navigateTo("collections")}
-              className="border-2 border-[#801818] text-[#801818] hover:bg-[#801818] hover:text-white px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all"
+              className="border-2 border-[#596613] text-[#596613] hover:bg-[#801818] hover:text-white px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all"
             >
               View All Cakes
             </button>
@@ -311,7 +312,7 @@ export const HomePage: React.FC = () => {
       {/* 5. CLIENT SAY */}
       <section className="max-w-[1280px] mx-auto px-4 md:px-12 py-16 text-center">
         <h2 className="font-display text-3xl md:text-5xl font-extrabold text-[#801818] mb-2 uppercase tracking-tight">
-          CLIENT SAY
+          WORDS FROM OUR CUSTOMERS
         </h2>
         <p className="text-xs text-[#666666] max-w-lg mx-auto mb-10">
           Real stories from our sweet community.
@@ -319,44 +320,45 @@ export const HomePage: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <div className="bg-white p-6 rounded-3xl shadow-sm border border-[#ebd8c5] space-y-4">
-            <div className="text-[#801818] font-display text-4xl font-extrabold">
+            <div className="text-[#596613] font-display text-4xl font-extrabold">
               ““
             </div>
             <p className="text-xs text-[#666666] leading-relaxed">
               "The Cravie Strawberry Cheesecake is out of this world! Rich,
-              creamy, and ridiculously fresh."
+              creamy, and ridiculously fresh.I am alwaya a big fan of their customized options."
             </p>
             <div>
               <h5 className="font-extrabold text-xs text-[#222225]">
-                Laura W.
+                Lili Williams.
               </h5>
             </div>
           </div>
 
           <div className="bg-white p-6 rounded-3xl shadow-sm border border-[#ebd8c5] space-y-4">
-            <div className="text-[#801818] font-display text-4xl font-extrabold">
+            <div className="text-[#596613] font-display text-4xl font-extrabold">
               ““
             </div>
             <p className="text-xs text-[#666666] leading-relaxed">
-              "Best cheesecake patisserie in town. The crust texture and glaze
-              pairing are perfection."
+              "Best cakes in town.
+              The make the best fresh cream cakes. Got my wedding cake from them and I was very happy with my choice."
             </p>
             <div>
-              <h5 className="font-extrabold text-xs text-[#222225]">Anna R.</h5>
+              <h5 className="font-extrabold text-xs text-[#222225]">Arup Malakar</h5>
             </div>
           </div>
 
           <div className="bg-white p-6 rounded-3xl shadow-sm border border-[#ebd8c5] space-y-4">
-            <div className="text-[#801818] font-display text-4xl font-extrabold">
+            <div className="text-[#596613] font-display text-4xl font-extrabold">
               ““
             </div>
             <p className="text-xs text-[#666666] leading-relaxed">
-              "Ordered a whole cheesecake for our family dinner. Delivered fresh
-              and disappeared in minutes!"
+              "Ordered a whole three stack theme cake for our family dinner. Delivered fresh
+              in minutes!Their cakes are moist and perfectly sweet.
+              "
             </p>
             <div>
               <h5 className="font-extrabold text-xs text-[#222225]">
-                David L.
+                David Levior
               </h5>
             </div>
           </div>
@@ -365,13 +367,17 @@ export const HomePage: React.FC = () => {
 
       {/* 6. OLIVE GREEN NEWSLETTER BOX */}
       <section className="max-w-[1280px] mx-auto px-4 md:px-12 py-8">
-        <div className="bg-[#596613] text-white rounded-3xl p-8 md:p-12 text-center space-y-6 shadow-lg">
-          <div className="inline-block bg-[#e08b26] text-white text-[11px] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider">
+        <div className="bg-[#596613] text-white rounded-3xl p-8 md:p-12 text-center space-y-2 shadow-lg">
+          {/* <div className="inline-block bg-[#e08b26] text-white text-[11px] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider">
             ★ 15% OFF YOUR FIRST ORDER ★
-          </div>
-          <h2 className="font-display text-3xl font-extrabold max-w-xl mx-auto">
-            Get special offers and all the latest products to your inbox! + 15%
-            off your first order
+          </div> */}
+          <h2 className=" text-3xl font-extrabold  ">
+            Get special offers and all the latest products to your doorstep!
+
+          </h2>
+          <h2 className="font-display text-md max-w-xl mx-auto">
+            Send us your preferrences and we will send you a 15% discount code for your first order!
+
           </h2>
           <form
             onSubmit={handleSubscribe}
@@ -387,7 +393,7 @@ export const HomePage: React.FC = () => {
             />
             <button
               type="submit"
-              className="w-full bg-[#222225] hover:bg-[#801818] text-white py-3 rounded-full font-bold text-xs uppercase tracking-wider"
+              className="w-full bg-[#801818] hover:bg-black text-white py-3 rounded-full font-bold text-xs uppercase tracking-wider"
             >
               Submit ➔
             </button>
