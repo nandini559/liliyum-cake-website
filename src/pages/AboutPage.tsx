@@ -62,7 +62,7 @@ export const AboutPage: React.FC = () => {
           {/* Right Photographic Banner Image */}
           <div className="lg:col-span-6 rounded-3xl overflow-hidden shadow-lg h-[240px] sm:h-[320px] lg:h-full min-h-[240px]">
             <img
-              src="https://liliyum.com/cdn/shop/files/Assorted_Brownie_Box_540x.jpg?v=1767839012"
+              src="https://cdn.shopify.com/s/files/1/0080/8235/8362/files/liliyum_patisserie_-_women_entrepreneurship_480x480.jpg?v=1628333267"
               alt="Cheesecake slices with berries"
               className="w-full h-full object-cover"
             />
