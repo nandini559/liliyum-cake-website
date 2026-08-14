@@ -179,7 +179,7 @@ export const AboutPage: React.FC = () => {
             />
 
             {/* Maroon Overlay */}
-            <div className="absolute inset-0 bg-[#801818]/5" />
+            <div className="absolute inset-0 bg-[#801818]/45" />
 
             {/* Content */}
             <div className="relative z-10 text-white p-6 sm:p-8 space-y-3">
