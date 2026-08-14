@@ -16,28 +16,21 @@ export const AboutPage: React.FC = () => {
   return (
     <main className="w-full font-sans bg-[#fbf4ea] text-[#222225] overflow-hidden">
       {/* Hero Section */}
-      <section className="relative pt-12 pb-16 px-6 md:px-12 max-w-[1280px] mx-auto text-center">
+      <section className="relative pt-5 pb-2 px-6 md:px-12 max-w-[1280px] mx-auto text-center">
         <div className="inline-block bg-[#801818] text-white text-[10px] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 shadow-sm">
-          ★ CRAVIE PATISSERIE EST. 2024 ★
+          ★ LILIYUM PATISSERIE & CAFE EST. 2024 ★
         </div>
 
-        <h1 className="font-display text-4xl sm:text-6xl font-extrabold text-[#801818] mb-4 uppercase tracking-tight">
+        <h1 className="font-display text-2xl sm:text-4xl font-extrabold text-[#801818] uppercase tracking-tight">
           Crafted Simply, Loved Deeply.
         </h1>
 
-        <p className="text-xs sm:text-sm text-[#666666] max-w-xl mx-auto mb-8 leading-relaxed">
-          Welcome to Cravie Patisserie, where every cheesecake is a celebration
+        <p className="text-xs sm:text-sm text-[#666666]  mx-auto mb-2 ">
+          Welcome to Liliyum Patisserie & Cafe, where every cheesecake is a celebration
           of artisanal craftsmanship, pure cream cheese, and sweet perfection.
         </p>
 
-        <div>
-          <button
-            onClick={() => navigateTo("collections")}
-            className="bg-[#801818] hover:bg-[#661212] text-white px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider shadow-md transition-all"
-          >
-            Explore Menu
-          </button>
-        </div>
+
       </section>
 
 
@@ -47,21 +40,23 @@ export const AboutPage: React.FC = () => {
           <div className="lg:col-span-6 bg-[#801818] text-white p-8 md:p-12 rounded-3xl flex flex-col justify-between space-y-6 shadow-lg">
             <div className="space-y-4">
               <h1 className="font-display text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
-                HEY, YOUR CHEESECAKE IS ALMOST READY!
+                HEY, YOUR CAKE IS ALMOST READY!
               </h1>
               <p className="text-xs sm:text-sm text-[#f5d5d8] leading-relaxed max-w-md">
                 A rich and creamy cheesecake made with smooth cream cheese, set
                 on a crunchy biscuit crust and topped with fresh strawberries
+                and sweet strawberry glaze. A rich and creamy cheesecake made with smooth cream cheese, set
+                on a crunchy biscuit crust and topped with fresh strawberries
+                and sweet strawberry glaze. A rich and creamy cheesecake made with smooth cream cheese, set
+                on a crunchy biscuit crust and topped with fresh strawberries
                 and sweet strawberry glaze.
+
               </p>
             </div>
             <div>
               <button
                 type="button"
-                onClick={() => {
-                  addToCart(PRODUCTS[0]);
-                  setIsCartOpen(true);
-                }}
+                onClick={() => navigateTo("collections")}
                 className="bg-white text-[#801818] hover:bg-[#fce8ea] px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider shadow-md transition-all"
               >
                 ORDER NOW
@@ -72,7 +67,7 @@ export const AboutPage: React.FC = () => {
           {/* Right Photographic Banner Image */}
           <div className="lg:col-span-6 rounded-3xl overflow-hidden shadow-lg h-[350px] lg:h-auto">
             <img
-              src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=1000&q=80"
+              src="https://liliyum.com/cdn/shop/files/Assorted_Brownie_Box_540x.jpg?v=1767839012"
               alt="Cheesecake slices with berries"
               className="w-full h-full object-cover"
             />
@@ -83,24 +78,28 @@ export const AboutPage: React.FC = () => {
 
       {/* Brand Story Section */}
       <section className="max-w-[1280px] mx-auto px-6 md:px-12 py-12">
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-[#ebd8c5] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="bg-[#596613] rounded-3xl p-8 md:p-12 shadow-sm border border-[#718020] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
           <div className="lg:col-span-6 space-y-4">
-            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#801818] uppercase tracking-tight">
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-white uppercase tracking-tight">
               Our Journey Began with a Simple Dream
             </h2>
-            <p className="text-xs text-[#666666] leading-relaxed">
+
+            <p className="text-xs text-white/80 leading-relaxed">
               Founded on the belief that everyday moments deserve a slice of
               pure joy, Cravie Patisserie started with a commitment to
               uncompromised quality, fresh strawberries, and authentic European
               cheesecake recipes.
             </p>
-            <p className="text-xs text-[#666666] leading-relaxed">
+
+            <p className="text-xs text-white/80 leading-relaxed">
               We set out to create a sanctuary for dessert lovers—a place where
               simple ingredients meet passion, resulting in cheesecakes that
               melt in every single bite.
             </p>
+
             <div className="pt-2">
-              <span className="bg-[#fce8ea] text-[#801818] px-4 py-2 rounded-full font-bold text-xs">
+              <span className="bg-white/15 border border-white/20 text-white px-4 py-2 rounded-full font-bold text-xs">
                 🌿 100% Quality Guaranteed
               </span>
             </div>
@@ -108,11 +107,12 @@ export const AboutPage: React.FC = () => {
 
           <div className="lg:col-span-6 rounded-2xl overflow-hidden shadow-md h-[320px]">
             <img
-              src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=800&q=80"
+              src="https://liliyum.com/cdn/shop/files/PineappleCake_540x.jpg?v=1711023738"
               alt="Cheesecake craft"
               className="w-full h-full object-cover"
             />
           </div>
+
         </div>
       </section>
 
@@ -134,7 +134,7 @@ export const AboutPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-[#e08b26] text-white p-8 rounded-3xl text-center space-y-3 shadow-md">
+          <div className="bg-[#596613] text-white p-8 rounded-3xl text-center space-y-3 shadow-md">
             <div className="text-3xl">🍰</div>
             <h3 className="font-display font-extrabold text-lg">
               Freshly Baked Daily
@@ -159,25 +159,38 @@ export const AboutPage: React.FC = () => {
 
       {/* Store Location & Hours Banner */}
       <section className="max-w-[1280px] mx-auto px-6 md:px-12 py-8">
-        <div className="bg-white rounded-3xl p-8 shadow-sm border border-[#ebd8c5] text-center space-y-4">
-          <h3 className="font-display text-2xl font-extrabold text-[#801818]">
-            Visit Our Bakery & Cafe
-          </h3>
-          <div className="flex flex-wrap justify-center gap-6 text-xs font-bold text-[#444444]">
-            <span>🕒 Open everyday: 10.00 am - 11.00 pm</span>
-            <span>
-              📍 1234 Oakwood Avenue, Apartment 12B, Springfield, IL 62704
-            </span>
+        <div className="bg-[#801818] rounded-3xl p-8 md:p-10 text-center shadow-lg">
+
+          <div className="space-y-5">
+            <h3 className="font-display text-2xl md:text-3xl font-extrabold text-white">
+              Visit Our Bakery & Cafe
+            </h3>
+
+            <p className="text-sm text-white/80 max-w-xl mx-auto">
+              Step into our sweet little world and enjoy freshly baked cakes,
+              delightful desserts, and beautiful moments.
+            </p>
+
+            <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 text-sm font-bold">
+
+              <div className="bg-white/15 border border-white/20 px-5 py-3 rounded-2xl text-white">
+                🕒 Open Everyday: 10:00 AM – 11:00 PM
+              </div>
+
+              <div className="bg-white/15 border border-white/20 px-5 py-3 rounded-2xl text-white">
+                📍 1234 Oakwood Avenue, Springfield
+              </div>
+
+            </div>
           </div>
+
         </div>
       </section>
 
       {/* Olive Green Newsletter Callout */}
       <section className="max-w-[1280px] mx-auto px-6 md:px-12 py-8">
         <div className="bg-[#596613] text-white rounded-3xl p-8 md:p-12 text-center space-y-6 shadow-lg">
-          <div className="inline-block bg-[#e08b26] text-white text-[11px] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider">
-            ★ 15% OFF YOUR FIRST ORDER ★
-          </div>
+
           <h2 className="font-display text-3xl font-extrabold max-w-xl mx-auto">
             Get special offers and all the latest products to your inbox!
           </h2>
@@ -195,7 +208,7 @@ export const AboutPage: React.FC = () => {
             />
             <button
               type="submit"
-              className="w-full bg-[#222225] hover:bg-[#801818] text-white py-3 rounded-full font-bold text-xs uppercase tracking-wider"
+              className="w-full  bg-[#801818] hover:bg-black text-white py-3 rounded-full font-bold text-xs uppercase tracking-wider"
             >
               Submit ➔
             </button>
