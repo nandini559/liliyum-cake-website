@@ -367,32 +367,49 @@ export const HomePage: React.FC = () => {
 
       {/* 6. OLIVE GREEN NEWSLETTER BOX */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8">
-        <div className="bg-[#596613] text-white rounded-3xl p-6 sm:p-8 md:p-12 text-center space-y-3 sm:space-y-4 shadow-lg">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold">
-            Get special offers and all the latest products to your doorstep!
-          </h2>
-          <h2 className="font-display text-xs sm:text-sm md:text-base max-w-xl mx-auto text-white/90">
-            Send us your preferrences and we will send you a 15% discount code for your first order!
-          </h2>
-          <form
-            onSubmit={handleSubscribe}
-            className="max-w-md mx-auto space-y-3 pt-2"
-          >
-            <input
-              type="email"
-              value={newsletterEmail}
-              onChange={(e) => setNewsletterEmail(e.target.value)}
-              placeholder="Email Address..."
-              required
-              className="w-full bg-white text-[#222] px-5 py-3 rounded-full text-xs font-semibold focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="w-full bg-[#801818] hover:bg-black text-white py-3 rounded-full font-bold text-xs uppercase tracking-wider transition-colors"
+        <div className="relative overflow-hidden rounded-3xl shadow-lg">
+
+          {/* Background Image */}
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAm44iVmJtI2ZV1NcZdS4pGBP5eYAvBkEN5mYPucFRrQ&s=10"
+            alt="Delicious cakes"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
+          {/* Green Overlay */}
+          <div className="absolute inset-0 bg-[#596613]/65" />
+
+          {/* Content */}
+          <div className="relative z-10 text-white p-6 sm:p-8 md:p-12 text-center space-y-3 sm:space-y-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold">
+              Get special offers and all the latest products to your doorstep!
+            </h2>
+
+            <p className="font-display text-xs sm:text-sm md:text-base max-w-xl mx-auto text-white/90">
+              Send us your preferences and we will send you a 15% discount code for your first order!
+            </p>
+
+            <form
+              onSubmit={handleSubscribe}
+              className="max-w-md mx-auto space-y-3 pt-2"
             >
-              Submit ➔
-            </button>
-          </form>
+              <input
+                type="email"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
+                placeholder="Email Address..."
+                required
+                className="w-full bg-white text-[#222] px-5 py-3 rounded-full text-xs font-semibold focus:outline-none"
+              />
+
+              <button
+                type="submit"
+                className="w-full bg-[#801818] hover:bg-black text-white py-3 rounded-full font-bold text-xs uppercase tracking-wider transition-colors"
+              >
+                Submit ➔
+              </button>
+            </form>
+          </div>
         </div>
       </section>
     </main>

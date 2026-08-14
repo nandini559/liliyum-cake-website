@@ -220,52 +220,63 @@ export const CollectionsPage: React.FC = () => {
 
         {/* Product Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-8">
-          {menuItems.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white rounded-3xl p-4 sm:p-6 shadow-sm border border-[#ebd8c5] flex flex-col justify-between text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-            >
-              {/* Product Image */}
+          {menuItems.map((item, index) => {
+            const cardColors = [
+              "bg-[#f6dce1]", // soft pink
+              "bg-[#e9dfc9]", // warm cream
+              "bg-[#dce8cf]", // soft green
+              "bg-[#e3daf2]", // soft lavender
+              "bg-[#f3dfc4]", // soft peach
+              "bg-[#d5e9e3]", // soft mint
+            ];
+
+            return (
               <div
-                style={{ backgroundColor: item.bgColor }}
-                className="aspect-[4/3] rounded-2xl p-3 sm:p-4 overflow-hidden mb-4 sm:mb-5"
+                key={item.id}
+                className={`${cardColors[index % cardColors.length]} rounded-3xl p-4 sm:p-5 shadow-sm border border-[#ebd8c5] flex flex-col justify-between text-center group hover:shadow-xl hover:-translate-y-2 transition-all duration-300`}
               >
-                <img
-                  src={item.images[0]}
-                  alt={item.name}
-                  className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+                {/* Bigger Product Image */}
+                <div
+                  style={{ backgroundColor: item.bgColor }}
+                  className="h-[280px] sm:h-[320px] md:h-[350px] rounded-2xl p-2 sm:p-3 overflow-hidden mb-4 sm:mb-5"
+                >
+                  <img
+                    src={item.images[0]}
+                    alt={item.name}
+                    className="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
 
-              {/* Product Info */}
-              <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-5 flex-1 flex flex-col justify-between">
-                <h3 className="font-display font-extrabold text-base sm:text-lg md:text-xl text-[#222222]">
-                  {item.name}
-                </h3>
+                {/* Product Info */}
+                <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-5 flex-1 flex flex-col justify-between">
+                  <h3 className="font-display font-extrabold text-base sm:text-lg md:text-xl text-[#222222]">
+                    {item.name}
+                  </h3>
 
-                <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-[#666666] font-semibold">
-                  {item.tags.map((tag) => (
-                    <span key={tag}> {tag}</span>
-                  ))}
+                  <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-[#666666] font-semibold">
+                    {item.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Price & Cart */}
+                <div className="flex justify-between items-center gap-2 pt-3 sm:pt-4 border-t border-[#e5d5c8]">
+                  <span className="font-extrabold text-base sm:text-lg text-[#801818] whitespace-nowrap">
+                    ₹{item.price}
+                  </span>
+
+                  <button
+                    type="button"
+                    onClick={() => addToCart(item)}
+                    className="bg-[#801818] hover:bg-[#661212] text-white text-xs sm:text-sm font-bold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-sm transition-all hover:scale-105"
+                  >
+                    Add to Cart
+                  </button>
                 </div>
               </div>
-
-              {/* Price & Cart */}
-              <div className="flex justify-between items-center gap-2 pt-3 sm:pt-4 border-t border-[#f3e3d3]">
-                <span className="font-extrabold text-base sm:text-lg text-[#801818] whitespace-nowrap">
-                  ₹{item.price}
-                </span>
-
-                <button
-                  type="button"
-                  onClick={() => addToCart(item)}
-                  className="bg-[#801818] hover:bg-[#661212] text-white text-xs sm:text-sm font-bold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-sm transition-all hover:scale-105"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     </main>

@@ -4,6 +4,7 @@ import { useCart } from "../context/CartContext";
 export const AboutPage: React.FC = () => {
   const { navigateTo, showToast } = useCart();
   const [email, setEmail] = useState("");
+  const [newsletterEmail, setNewsletterEmail] = useState("");
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -116,36 +117,82 @@ export const AboutPage: React.FC = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-          <div className="bg-[#801818] text-white p-6 sm:p-8 rounded-3xl text-center space-y-3 shadow-md">
-            <div className="text-3xl">🧀</div>
-            <h3 className="font-display font-extrabold text-base sm:text-lg">
-              Pure Cream Cheese
-            </h3>
-            <p className="text-xs text-[#f5d5d8]">
-              We source only authentic high-grade cream cheese for a rich, silky
-              texture.
-            </p>
+          <div className="relative overflow-hidden rounded-3xl text-center shadow-md">
+
+            {/* Background Image */}
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR6jzM2toBnEflDcS_3a9mY1jrLIKipEbx-E85-lzvEQ&s=10"
+              alt="Cream cheese cake"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+
+            {/* Maroon Overlay */}
+            <div className="absolute inset-0 bg-[#801818]/45" />
+
+            {/* Content */}
+            <div className="relative z-10 text-white p-6 sm:p-8 space-y-3">
+              <div className="text-3xl">🧀</div>
+
+              <h3 className="font-display font-extrabold text-base sm:text-lg">
+                Pure Cream Cheese
+              </h3>
+
+              <p className="text-xs text-[#f5d5d8]">
+                We source only authentic high-grade cream cheese for a rich, silky
+                texture.
+              </p>
+            </div>
+
           </div>
 
-          <div className="bg-[#596613] text-white p-6 sm:p-8 rounded-3xl text-center space-y-3 shadow-md">
-            <div className="text-3xl">🍰</div>
-            <h3 className="font-display font-extrabold text-base sm:text-lg">
-              Freshly Baked Daily
-            </h3>
-            <p className="text-xs text-white/90">
-              Every slice is baked fresh each morning in our artisanal kitchen.
-            </p>
+          <div className="relative overflow-hidden rounded-3xl text-center shadow-md">
+            {/* Background Image */}
+            <img
+              src="https://images.unsplash.com/photo-1557925923-cd4648e211a0?w=1000&q=85"
+              alt="Freshly baked cake"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+
+            {/* Green Overlay */}
+            <div className="absolute inset-0 bg-[#596613]/45" />
+
+            {/* Content */}
+            <div className="relative z-10 text-white p-6 sm:p-8 space-y-3">
+              <div className="text-3xl">🍰</div>
+
+              <h3 className="font-display font-extrabold text-base sm:text-lg">
+                Freshly Baked Daily
+              </h3>
+
+              <p className="text-xs text-white/90">
+                Every slice is baked fresh each morning in our artisanal kitchen.
+              </p>
+            </div>
           </div>
 
-          <div className="bg-[#801818] text-white p-6 sm:p-8 rounded-3xl text-center space-y-3 shadow-md">
-            <div className="text-3xl">🍓</div>
-            <h3 className="font-display font-extrabold text-base sm:text-lg">
-              Fresh Organic Fruit
-            </h3>
-            <p className="text-xs text-[#f5d5d8]">
-              Topped with handpicked organic berries and natural strawberry
-              glaze.
-            </p>
+          <div className="relative overflow-hidden rounded-3xl text-center shadow-md">
+            {/* Background Image */}
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAm44iVmJtI2ZV1NcZdS4pGBP5eYAvBkEN5mYPucFRrQ&s=10"
+              alt="Fresh organic strawberries"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+
+            {/* Maroon Overlay */}
+            <div className="absolute inset-0 bg-[#801818]/5" />
+
+            {/* Content */}
+            <div className="relative z-10 text-white p-6 sm:p-8 space-y-3">
+              <div className="text-3xl">🍓</div>
+
+              <h3 className="font-display font-extrabold text-base sm:text-lg">
+                Fresh Organic Fruit
+              </h3>
+
+              <p className="text-xs text-white/90">
+                Topped with handpicked organic berries and natural strawberry glaze.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -182,30 +229,49 @@ export const AboutPage: React.FC = () => {
 
       {/* Olive Green Newsletter Callout */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8">
-        <div className="bg-[#596613] text-white rounded-3xl p-6 sm:p-8 md:p-12 text-center space-y-4 sm:space-y-6 shadow-lg">
+        <div className="relative overflow-hidden rounded-3xl shadow-lg">
 
-          <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-extrabold max-w-xl mx-auto">
-            Get special offers and all the latest products to your inbox!
-          </h2>
-          <form
-            onSubmit={handleSubscribe}
-            className="max-w-md mx-auto space-y-3"
-          >
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email Address..."
-              required
-              className="w-full bg-white text-[#222] px-5 py-3 rounded-full text-xs font-semibold focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="w-full bg-[#801818] hover:bg-black text-white py-3 rounded-full font-bold text-xs uppercase tracking-wider transition-colors"
+          {/* Background Image */}
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx8tie0iTTCVeGj0un587lRuSjMOyPEF_YsJhglGsd2Q&s=10"
+            alt="Delicious cakes"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
+          {/* Green Overlay */}
+          <div className="absolute inset-0 bg-[#596613]/55" />
+
+          {/* Content */}
+          <div className="relative z-10 text-white p-6 sm:p-8 md:p-12 text-center space-y-3 sm:space-y-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold">
+              Get special offers and all the latest products to your doorstep!
+            </h2>
+
+            <p className="font-display text-xs sm:text-sm md:text-base max-w-xl mx-auto text-white/90">
+              Send us your preferences and we will send you a 15% discount code for your first order!
+            </p>
+
+            <form
+              onSubmit={handleSubscribe}
+              className="max-w-md mx-auto space-y-3 pt-2"
             >
-              Submit ➔
-            </button>
-          </form>
+              <input
+                type="email"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
+                placeholder="Email Address..."
+                required
+                className="w-full bg-white text-[#222] px-5 py-3 rounded-full text-xs font-semibold focus:outline-none"
+              />
+
+              <button
+                type="submit"
+                className="w-full bg-[#801818] hover:bg-black text-white py-3 rounded-full font-bold text-xs uppercase tracking-wider transition-colors"
+              >
+                Submit ➔
+              </button>
+            </form>
+          </div>
         </div>
       </section>
     </main>
